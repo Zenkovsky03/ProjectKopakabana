@@ -1,4 +1,7 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 
 namespace Kopakabana
 {
@@ -16,17 +19,33 @@ namespace Kopakabana
 
         public void ZapiszWynik()
         {
-            // TODO:
+            var druzyna = new
+            {
+                Id,
+                Nazwa,
+                Zawodnicy,
+                Zwyciestwa
+            };
+
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            string json = JsonSerializer.Serialize(druzyna, options);
+            string fileName = $"Druzyna-{Id}-{Nazwa}.json";
+
+            File.WriteAllText(fileName, json);
         }
 
         public void DodajZawodnika(Zawodnik zawodnik)
         {
-            // TODO:
+            this.Zawodnicy.Add(zawodnik);
         }
 
         public void UsunZawodnika(Zawodnik zawodnik) 
         {
-            // TODO:
+            this.Zawodnicy.Remove(zawodnik);
         }
     }
 }

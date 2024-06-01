@@ -17,7 +17,24 @@ namespace Kopakabana
         
         public void ZapiszWynik()
         {
-            // TODO: 
+            var druzyna = new
+            {
+                Id,
+                Data,
+                Druzyny,
+                Sedziowie,
+                Wynik
+            };
+
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            string json = JsonSerializer.Serialize(druzyna, options);
+            string fileName = $"Gra-{Id}-{Data}.json";
+
+            File.WriteAllText(fileName, json);
         }
     }
 }
