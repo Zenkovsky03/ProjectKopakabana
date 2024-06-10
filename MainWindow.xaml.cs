@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Kopakabana;
+
 
 namespace Kopakabana
 {
@@ -23,7 +25,9 @@ namespace Kopakabana
 
         private void wybierzTurniejClick(object sender, RoutedEventArgs e)
         {
-            // todo: zmiana sceny na te menu z dyscyplinami
+            WybierzTurniej wybierzTurniej = new WybierzTurniej();
+            wybierzTurniej.Show();
+            this.Close();
         }
 
         private void wybierzDwaOgnie(object sender, RoutedEventArgs e)
@@ -31,17 +35,21 @@ namespace Kopakabana
             Turniej turniej = new Turniej();
 
             turniej.wybierzDyscyplina(new DwaOgnie());
+
         }
 
 
 
         private void jakGracClick(object sender, RoutedEventArgs e)
         {
-            // TODO: zmiana ekranu na jka grac tam to cos tam instrukcje czy co tam chcecie
+            ZasadyGryWindow zasadyGryWindow = new ZasadyGryWindow();
+            zasadyGryWindow.Show();
+            this.Close();
+
         }
         private void wyjdzClick(object sender, RoutedEventArgs e)
         {
-            // todo: wyjscie ;d
+            Application.Current.Shutdown();
         }
     }
 }
