@@ -23,18 +23,25 @@ namespace Kopakabana
 
         private void wybierzTurniejClick(object sender, RoutedEventArgs e)
         {
-            Turniej turniej = new Turniej();
-            turniej.wybierzDyscyplina(new DwaOgnie());
-
+            // todo: zmiana sceny na te menu z dyscyplinami
         }
+
+        private void wybierzDwaOgnie(object sender, RoutedEventArgs e)
+        {
+            Turniej turniej = new Turniej();
+
+            turniej.wybierzDyscyplina(new DwaOgnie());
+        }
+
+
 
         private void jakGracClick(object sender, RoutedEventArgs e)
         {
-
+            // TODO: zmiana ekranu na jka grac tam to cos tam instrukcje czy co tam chcecie
         }
         private void wyjdzClick(object sender, RoutedEventArgs e)
         {
-
+            // todo: wyjscie ;d
         }
     }
 }
