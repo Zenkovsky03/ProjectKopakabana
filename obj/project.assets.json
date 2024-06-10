@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Maciek\\Desktop\\projekt\\Kopakabana\\Kopakabana\\Kopakabana.csproj",
+      "projectUniqueName": "C:\\Users\\Maciek\\Desktop\\projekt\\Kopakabana\\Kopakabana.csproj",
       "projectName": "Kopakabana",
-      "projectPath": "C:\\Users\\Maciek\\Desktop\\projekt\\Kopakabana\\Kopakabana\\Kopakabana.csproj",
+      "projectPath": "C:\\Users\\Maciek\\Desktop\\projekt\\Kopakabana\\Kopakabana.csproj",
       "packagesPath": "C:\\Users\\Maciek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Maciek\\Desktop\\projekt\\Kopakabana\\Kopakabana\\obj\\",
+      "outputPath": "C:\\Users\\Maciek\\Desktop\\projekt\\Kopakabana\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Maciek\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -9,7 +9,7 @@ namespace Kopakabana
     {
         private AbstractDyscyplina Dyscyplina { get; set; }
         private List<Druzyna> Druzyny { get; set; }
-        private List<Sedzia> Sedziowie { get; set; }
+        private List<AbstractSedzia> Sedziowie { get; set; }
         private List<Gra> Gry { get; set; }
 
         public void DodajDruzyne(Druzyna druzyna)
@@ -73,7 +73,7 @@ namespace Kopakabana
             };
 
             string json = JsonSerializer.Serialize(druzyna, options);
-            string fileName = $"Turniej-{Dyscyplina.nazwa}.json";
+            string fileName = $"Turniej-{Dyscyplina}.json";
 
             File.WriteAllText(fileName, json);
         }
