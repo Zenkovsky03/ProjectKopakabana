@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kopakabana"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="WybierzTurniej" Height="450" Width="800">
     <Grid>
         <Button Content="Siatkówka" HorizontalAlignment="Left" Margin="182,158,0,0" VerticalAlignment="Top" Height="50" Width="100"/>

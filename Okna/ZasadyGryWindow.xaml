@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kopakabana"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Zasady Gry" Height="450" Width="800">
     <Grid>
         <Button Content="DZIALA" HorizontalAlignment="Left" Margin="358,178,0,0" VerticalAlignment="Top"/>
