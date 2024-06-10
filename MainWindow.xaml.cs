@@ -20,5 +20,21 @@ namespace Kopakabana
         {
             InitializeComponent();
         }
+
+        private void wybierzTurniejClick(object sender, RoutedEventArgs e)
+        {
+            Turniej turniej = new Turniej();
+            turniej.wybierzDyscyplina(new DwaOgnie());
+
+        }
+
+        private void jakGracClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void wyjdzClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

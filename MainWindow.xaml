@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kopakabana"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Kopakabana" Height="450" Width="800">
     <Grid>
+        <Button Content="Wybierz turniej" HorizontalAlignment="Center" Margin="0,69,0,0" VerticalAlignment="Top" Width="336" Height="45" Click="wybierzTurniejClick"/>
+        <Button Content="Jak grać" HorizontalAlignment="Center" Margin="0,172,0,0" VerticalAlignment="Top" Width="336" Height="45" Click="jakGracClick"/>
+        <Button Content="Wyjdź" HorizontalAlignment="Center" Margin="0,277,0,0" VerticalAlignment="Top" Width="336" Height="45" Click="wyjdzClick"/>
 
     </Grid>
 </Window>

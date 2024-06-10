@@ -97,5 +97,10 @@ namespace Kopakabana
                 Gry = turniej.Gry;
             }
         }
+
+        public void wybierzDyscyplina(AbstractDyscyplina Dyscyplina)
+        {
+            this.Dyscyplina = Dyscyplina;
+        }
     }
 }
