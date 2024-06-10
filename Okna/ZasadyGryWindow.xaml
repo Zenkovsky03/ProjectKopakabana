@@ -8,7 +8,19 @@
         WindowStartupLocation="CenterScreen"
         Title="Zasady Gry" Height="450" Width="800">
     <Grid>
-        <Button Content="DZIALA" HorizontalAlignment="Left" Margin="358,178,0,0" VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+
+        <Button  Grid.Row="2" Content="Cofnij" Width="250" Height="50" Click="CofnijClick"/>
+        <Label  Grid.Row="1" Content="Tutaj beda jakis tam opisane co jak sie gra lorem lorem lorem" Padding="50,0,0,0" />
+
 
     </Grid>
 </Window>

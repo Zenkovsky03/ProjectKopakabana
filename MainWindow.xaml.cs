@@ -26,19 +26,19 @@ namespace Kopakabana
             this.Turniej = new Turniej();
         }
 
-        private void wybierzTurniejClick(object sender, RoutedEventArgs e)
+        private void WybierzTurniejClick(object sender, RoutedEventArgs e)
         {
             WybierzTurniej wybierzTurniej = new WybierzTurniej();
             wybierzTurniej.Show();
             this.Close();
         }
-        private void jakGracClick(object sender, RoutedEventArgs e)
+        private void JakGracClick(object sender, RoutedEventArgs e)
         {
             ZasadyGryWindow zasadyGryWindow = new ZasadyGryWindow();
             zasadyGryWindow.Show();
             this.Close();
         }
-        private void wyjdzClick(object sender, RoutedEventArgs e)
+        private void WyjdzClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }

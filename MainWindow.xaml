@@ -8,9 +8,19 @@
         WindowStartupLocation="CenterScreen"
         Title="Kopakabana" Height="450" Width="800">
     <Grid>
-        <Button Content="Wybierz turniej" HorizontalAlignment="Center" Margin="0,69,0,0" VerticalAlignment="Top" Width="336" Height="45" Click="wybierzTurniejClick"/>
-        <Button Content="Jak grać" HorizontalAlignment="Center" Margin="0,172,0,0" VerticalAlignment="Top" Width="336" Height="45" Click="jakGracClick"/>
-        <Button Content="Wyjdź" HorizontalAlignment="Center" Margin="0,277,0,0" VerticalAlignment="Top" Width="336" Height="45" Click="wyjdzClick"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <Button Grid.Column="1" Grid.Row="0" Content="Wybierz turniej" HorizontalAlignment="Center" Width="250" Height="50" Click="WybierzTurniejClick"/>
+        <Button Grid.Column="1" Grid.Row="1"  Content="Jak grać" HorizontalAlignment="Center"  Width="250" Height="50" Click="JakGracClick"/>
+        <Button Grid.Column="1" Grid.Row="2" Content="Wyjdź" HorizontalAlignment="Center"  Width="250" Height="50" Click="WyjdzClick"/>
     </Grid>
 </Window>

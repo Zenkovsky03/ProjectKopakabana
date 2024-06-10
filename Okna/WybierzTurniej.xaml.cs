@@ -24,11 +24,26 @@ namespace Kopakabana
             InitializeComponent();
         }
 
-        private void Cofnij(object sender, RoutedEventArgs e)
+        private void CofnijClick(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //przycisk siatkowka
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            //przycisk przeciagnie liny
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            //przycisk dwa ognie
         }
     }
 }

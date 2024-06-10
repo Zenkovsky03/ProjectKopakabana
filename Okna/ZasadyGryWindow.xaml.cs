@@ -24,5 +24,12 @@ namespace Kopakabana
         {
             InitializeComponent();
         }
+
+        private void CofnijClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

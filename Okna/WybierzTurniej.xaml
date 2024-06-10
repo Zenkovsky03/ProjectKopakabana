@@ -8,10 +8,21 @@
         WindowStartupLocation="CenterScreen"
         Title="WybierzTurniej" Height="450" Width="800">
     <Grid>
-        <Button Content="Siatkówka" HorizontalAlignment="Left" Margin="182,158,0,0" VerticalAlignment="Top" Height="50" Width="100"/>
-        <Button Content="Przeciąganie liny" HorizontalAlignment="Left" Margin="365,158,0,0" VerticalAlignment="Top" Height="50" Width="100"/>
-        <Button Content="Dwa ognie" HorizontalAlignment="Left" Margin="526,158,0,0" VerticalAlignment="Top" Height="50" Width="100"/>
-        <Button Content="Cofnij" HorizontalAlignment="Left" Margin="339,288,0,0" VerticalAlignment="Top" Height="51" Width="100" Click="Cofnij"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
+        <Button Grid.Column="0" Grid.Row="1" Content="Siatkowka" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="50" Click="Button_Click" />
+        <Button Grid.Column="1" Grid.Row="1"  Content="Przeciaganie liny" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Height="50" Click="Button_Click_1" />
+        <Button Grid.Column="2" Grid.Row="1" Content="Dwa ognie" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Height="50" Click="Button_Click_2" />
+        <Button Grid.Column="1" Grid.Row="2" Content="Cofnij" HorizontalAlignment="Center" Width="250" Height="50" Click="CofnijClick"/>
     </Grid>
+
 </Window>
