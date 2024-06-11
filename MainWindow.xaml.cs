@@ -18,12 +18,10 @@ namespace Kopakabana
     /// </summary>
     public partial class MainWindow : Window
     {
-        Turniej Turniej { get; set; }
+        
         public MainWindow()
         {
             InitializeComponent();
-            
-            this.Turniej = new Turniej();
         }
 
         private void WybierzTurniejClick(object sender, RoutedEventArgs e)
@@ -42,34 +40,6 @@ namespace Kopakabana
         {
             Application.Current.Shutdown();
         }
-
-        /**
-         * nie uzyte jeszcze, jak dodacie przyciski i rozne te widoki to dostosujcie to, w sensie w xamlu nadajcie Click= na te metody
-         */
-        private void wybierzDwaOgnieClick(object sender, RoutedEventArgs e)
-        {
-            this.Turniej.wybierzDyscyplina(new DwaOgnie());
-        }
-
-        /**
-         * nie uzyte jeszcze, jak dodacie przycisk to dostosujcie to
-         */
-        private void wybierzPrzeciaganieLinyClick(object sender, RoutedEventArgs e)
-        {
-            this.Turniej.wybierzDyscyplina(new PrzeciaganieLiny());
-        }
-
-        /**
-         * nie uzyte jeszcze, jak dodacie przycisk to dostosujcie to
-         */
-        private void wybierzWybierzSiatkowkePlazowaClick(object sender, RoutedEventArgs e)
-        {
-            this.Turniej.wybierzDyscyplina(new SiatkowkaPlazowa());
-        }
-
-        /**
-         * wszystko nizej nie uzyte to zebym sie nie potwarzal TODO::::::
-         */
 
         private void importDruzynyClick(object sender, RoutedEventArgs e)
         {

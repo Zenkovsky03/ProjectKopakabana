@@ -19,9 +19,11 @@ namespace Kopakabana
     /// </summary>
     public partial class WybierzTurniej : Window
     {
+        Turniej Turniej { get; set; }
         public WybierzTurniej()
         {
             InitializeComponent();
+            this.Turniej = new Turniej();
         }
 
         private void CofnijClick(object sender, RoutedEventArgs e)
@@ -31,19 +33,19 @@ namespace Kopakabana
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void wybierzSiatkowkePlazowaClick(object sender, RoutedEventArgs e)
         {
-            //przycisk siatkowka
+            this.Turniej.wybierzDyscyplina(new SiatkowkaPlazowa());
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void wybierzPrzeciaganieLinyClick(object sender, RoutedEventArgs e)
         {
-            //przycisk przeciagnie liny
+            this.Turniej.wybierzDyscyplina(new PrzeciaganieLiny());
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void wybierzDwaOgnieClick(object sender, RoutedEventArgs e)
         {
-            //przycisk dwa ognie
+            this.Turniej.wybierzDyscyplina(new DwaOgnie());
         }
     }
 }
