@@ -11,25 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Kopakabana;
 
 namespace Kopakabana
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window1.xaml
+    /// Logika interakcji dla klasy TurniejOkno.xaml
     /// </summary>
-    public partial class ZasadyGryWindow : Window
+    public partial class TurniejOkno : Window
     {
-        public ZasadyGryWindow()
+        public TurniejOkno()
         {
             InitializeComponent();
-        }
-
-        private void CofnijClick(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
         }
     }
 }

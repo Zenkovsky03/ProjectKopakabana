@@ -32,8 +32,8 @@ namespace Kopakabana
         }
         private void JakGracClick(object sender, RoutedEventArgs e)
         {
-            ZasadyGryWindow zasadyGryWindow = new ZasadyGryWindow();
-            zasadyGryWindow.Show();
+            ZasadyGry zasadyGry = new ZasadyGry();
+            zasadyGry.Show();
             this.Close();
         }
         private void WyjdzClick(object sender, RoutedEventArgs e)

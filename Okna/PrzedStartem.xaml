@@ -1,0 +1,15 @@
+﻿<Window x:Class="Kopakabana.PrzedStartem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kopakabana"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="PrzedStartem" Height="450" Width="800">
+    <Grid>
+        <Button Content="Rozpocznij turniej" HorizontalAlignment="Left" Margin="151,163,0,0" VerticalAlignment="Top" Height="70" Width="216" Click="RozpocznijClick"/>
+        <Button Content="Zarządzaj drużynami i sędziami" HorizontalAlignment="Left" Margin="447,163,0,0" VerticalAlignment="Top" Height="70" Width="203" Click="ZarzadzajClick"/>
+        <Button Content="Cofnij" HorizontalAlignment="Left" Margin="650,377,0,0" VerticalAlignment="Top" Height="32" Width="121" Click="CofnijClick"/>
+    </Grid>
+</Window>

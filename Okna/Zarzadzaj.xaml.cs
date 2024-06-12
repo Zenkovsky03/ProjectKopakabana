@@ -12,16 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Kopakabana.Okna
+namespace Kopakabana
 {
     /// <summary>
-    /// Logika interakcji dla klasy Turniej.xaml
+    /// Logika interakcji dla klasy Zarzadzaj.xaml
     /// </summary>
-    public partial class Turniej : Window
+    public partial class Zarzadzaj : Window
     {
-        public Turniej()
+        public Zarzadzaj()
         {
             InitializeComponent();
+        }
+
+        private void CofnijClick(object sender, RoutedEventArgs e)
+        {
+            PrzedStartem przedStartem = new PrzedStartem();
+            przedStartem.Show();
+            this.Close();
         }
     }
 }

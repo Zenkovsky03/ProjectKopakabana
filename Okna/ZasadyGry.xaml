@@ -1,4 +1,4 @@
-﻿<Window x:Class="Kopakabana.ZasadyGryWindow"
+﻿<Window x:Class="Kopakabana.ZasadyGry"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -14,12 +14,13 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="0*" />
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
 
-        <Button  Grid.Row="2" Content="Cofnij" Width="250" Height="50" Click="CofnijClick"/>
-        <Label  Grid.Row="1" Content="Tutaj beda jakis tam opisane co jak sie gra lorem lorem lorem" Padding="50,0,0,0" />
+        <Button  Grid.Row="2" Content="Cofnij" Width="250" Height="50" Click="CofnijClick" Grid.ColumnSpan="2" Margin="275,29,275,29"/>
+        <Label  Grid.Row="1" Content="Tutaj beda jakis tam opisane co jak sie gra lorem lorem lorem" Padding="50,0,0,0" Grid.ColumnSpan="2" Margin="0,0,0,108" Grid.RowSpan="2" />
 
 
     </Grid>
