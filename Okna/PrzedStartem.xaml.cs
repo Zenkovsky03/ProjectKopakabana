@@ -26,8 +26,8 @@ namespace Kopakabana
 
         private void RozpocznijClick(object sender, RoutedEventArgs e)
         {
-            TurniejOkno turniejOkno = new TurniejOkno();
-            turniejOkno.Show();
+            TurniejGlowny turniejGlowny = new TurniejGlowny();
+            turniejGlowny.Show();
             this.Close();
             
         }

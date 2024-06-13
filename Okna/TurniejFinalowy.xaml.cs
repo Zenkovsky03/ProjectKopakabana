@@ -15,13 +15,22 @@ using System.Windows.Shapes;
 namespace Kopakabana
 {
     /// <summary>
-    /// Logika interakcji dla klasy TurniejOkno.xaml
+    /// Logika interakcji dla klasy TurniejFinalowy.xaml
     /// </summary>
-    public partial class TurniejOkno : Window
+    public partial class TurniejFinalowy : Window
     {
-        public TurniejOkno()
+        public TurniejFinalowy()
         {
             InitializeComponent();
         }
+
+        private void PodiumClick(object sender, RoutedEventArgs e)
+        {
+            Podium podium = new Podium();
+            podium.Show();
+            this.Close();
+        }
+
+        
     }
 }
