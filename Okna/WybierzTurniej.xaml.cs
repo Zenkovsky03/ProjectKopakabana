@@ -33,26 +33,26 @@ namespace Kopakabana
             this.Close();
         }
 
-        private void wybierzSiatkowkePlazowaClick(object sender, RoutedEventArgs e)
+        private void WybierzSiatkowkePlazowaClick(object sender, RoutedEventArgs e)
         {
             this.Turniej.wybierzDyscyplina(new SiatkowkaPlazowa());
-            PrzedStartem przedStartem = new PrzedStartem();
+            PrzedStartem przedStartem = new PrzedStartem(this.Turniej);
             przedStartem.Show();
             this.Close();
         }
 
-        private void wybierzPrzeciaganieLinyClick(object sender, RoutedEventArgs e)
+        private void WybierzPrzeciaganieLinyClick(object sender, RoutedEventArgs e)
         {
             this.Turniej.wybierzDyscyplina(new PrzeciaganieLiny());
-            PrzedStartem przedStartem = new PrzedStartem();
+            PrzedStartem przedStartem = new PrzedStartem(this.Turniej);
             przedStartem.Show();
             this.Close();
         }
 
-        private void wybierzDwaOgnieClick(object sender, RoutedEventArgs e)
+        private void WybierzDwaOgnieClick(object sender, RoutedEventArgs e)
         {
             this.Turniej.wybierzDyscyplina(new DwaOgnie());
-            PrzedStartem przedStartem = new PrzedStartem();
+            PrzedStartem przedStartem = new PrzedStartem(this.Turniej);
             przedStartem.Show();
             this.Close();
         }

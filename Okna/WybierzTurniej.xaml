@@ -19,9 +19,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="1" Content="Siatkowka" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="50" Click="wybierzSiatkowkePlazowaClick" />
-        <Button Grid.Column="1" Grid.Row="1"  Content="Przeciaganie liny" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Height="50" Click="wybierzPrzeciaganieLinyClick" />
-        <Button Grid.Column="2" Grid.Row="1" Content="Dwa ognie" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Height="50" Click="wybierzDwaOgnieClick" />
+        <Button Grid.Column="0" Grid.Row="1" Content="Siatkowka" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="50" Click="WybierzSiatkowkePlazowaClick" />
+        <Button Grid.Column="1" Grid.Row="1"  Content="Przeciaganie liny" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Height="50" Click="WybierzPrzeciaganieLinyClick" />
+        <Button Grid.Column="2" Grid.Row="1" Content="Dwa ognie" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Height="50" Click="WybierzDwaOgnieClick" />
         <Button Grid.Column="1" Grid.Row="2" Content="Cofnij" HorizontalAlignment="Center" Width="250" Height="50" Click="CofnijClick"/>
     </Grid>
 

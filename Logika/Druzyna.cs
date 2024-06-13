@@ -5,12 +5,15 @@ using System.Text.Json;
 
 namespace Kopakabana
 {
-    class Druzyna
+    public class Druzyna
     {
-        private int Id { get; set; }
-        private string Nazwa { get; set; }
-        private List<Zawodnik> Zawodnicy { get; set; }
-        private int Zwyciestwa { get; set; } 
+        public string Nazwa { get; set; }
+        public int ZagraneMecze { get; set; }
+        public int Wygrane { get; set; }
+        public int Przegrane { get; set; }
+        public int Remisy { get; set; }
+        public int Punkty { get; set; }
+        public List<Zawodnik> Zawodnicy { get; set; }
 
         public void ZaplanujGre()
         {
@@ -21,10 +24,13 @@ namespace Kopakabana
         {
             var druzyna = new
             {
-                Id,
                 Nazwa,
-                Zawodnicy,
-                Zwyciestwa
+                ZagraneMecze,
+                Wygrane,
+                Przegrane,
+                Remisy,
+                Punkty,
+                Zawodnicy
             };
 
             var options = new JsonSerializerOptions
@@ -33,7 +39,7 @@ namespace Kopakabana
             };
 
             string json = JsonSerializer.Serialize(druzyna, options);
-            string fileName = $"Druzyna-{Id}-{Nazwa}.json";
+            string fileName = $"Druzyna--{Nazwa}.json";
 
             File.WriteAllText(fileName, json);
         }

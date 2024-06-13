@@ -2,7 +2,7 @@ using System;
 
 namespace Kopakabana
 {
-    abstract class AbstractDyscyplina
+    public abstract class AbstractDyscyplina
     {
         private string Nazwa { get; set; }
     }

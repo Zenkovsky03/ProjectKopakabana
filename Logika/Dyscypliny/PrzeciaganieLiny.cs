@@ -2,7 +2,7 @@ using System;
 
 namespace Kopakabana
 {
-    class PrzeciaganieLiny : AbstractDyscyplina
+    public class PrzeciaganieLiny : AbstractDyscyplina
     {
     }
 }

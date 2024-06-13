@@ -19,21 +19,23 @@ namespace Kopakabana
     /// </summary>
     public partial class PrzedStartem : Window
     {
-        public PrzedStartem()
+        Turniej Turniej { get; set; }
+        public PrzedStartem(Turniej Turniej)
         {
             InitializeComponent();
+            this.Turniej = Turniej;
         }
 
         private void RozpocznijClick(object sender, RoutedEventArgs e)
         {
-            TurniejGlowny turniejGlowny = new TurniejGlowny();
+            TurniejGlowny turniejGlowny = new TurniejGlowny(this.Turniej);
             turniejGlowny.Show();
             this.Close();
             
         }
         private void ZarzadzajClick(object sender, RoutedEventArgs e)
         {
-            Zarzadzaj oknoZarzadzania = new Zarzadzaj();
+            Zarzadzaj oknoZarzadzania = new Zarzadzaj(this.Turniej);
             oknoZarzadzania.Show();
             this.Close();
         }

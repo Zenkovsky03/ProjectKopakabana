@@ -5,9 +5,9 @@ using System.Text.Json;
 
 namespace Kopakabana
 {
-    class Turniej
+    public class Turniej
     {
-        private AbstractDyscyplina Dyscyplina { get; set; }
+        public AbstractDyscyplina Dyscyplina { get; set; }
         private List<Druzyna> Druzyny { get; set; }
         private List<AbstractSedzia> Sedziowie { get; set; }
         private List<Gra> Gry { get; set; }

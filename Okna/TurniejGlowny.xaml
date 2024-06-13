@@ -8,14 +8,14 @@
         WindowStartupLocation="CenterScreen"
         Title="Turniej finalowy" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Margin="10,100,397,100">
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Margin="10,100,338,100">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Team" Binding="{Binding TeamName}" />
-                <DataGridTextColumn Header="Matches Played" Binding="{Binding MatchesPlayed}" />
-                <DataGridTextColumn Header="Wins" Binding="{Binding Wins}" />
-                <DataGridTextColumn Header="Losses" Binding="{Binding Losses}" />
-                <DataGridTextColumn Header="Draws" Binding="{Binding Draws}" />
-                <DataGridTextColumn Header="Points" Binding="{Binding Points}" />
+                <DataGridTextColumn Header="Druzyna" Binding="{Binding Nazwa}" />
+                <DataGridTextColumn Header="Zagrane mecze" Binding="{Binding ZagraneMecze}" />
+                <DataGridTextColumn Header="Wugrane" Binding="{Binding Wygrane}" />
+                <DataGridTextColumn Header="Przegrane" Binding="{Binding Przegrane}" />
+                <DataGridTextColumn Header="Remisy" Binding="{Binding Remisy}" />
+                <DataGridTextColumn Header="Punkty" Binding="{Binding Punkty}" />
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock HorizontalAlignment="Left" Margin="367,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pl-pl" Text="Turniej: Siatkówka"/></TextBlock>

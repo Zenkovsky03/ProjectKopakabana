@@ -2,7 +2,7 @@ using System;
 
 namespace Kopakabana
 {
-    class DwaOgnie : AbstractDyscyplina
+    public class DwaOgnie : AbstractDyscyplina
     {
     }
 }

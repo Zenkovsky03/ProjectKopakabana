@@ -6,24 +6,26 @@ namespace Kopakabana
 {
     public partial class TurniejGlowny : Window
     {
-        public TurniejGlowny()
+        Turniej Turniej { get; set; }
+        public TurniejGlowny(Turniej Turniej)
         {
             InitializeComponent();
+            this.Turniej = Turniej;
             LoadData();
         }
 
         private void LoadData()
         {
-            var teams = new List<Team>
+            var Druzyny = new List<Druzyna>
             {
-                new Team { TeamName = "Team A", MatchesPlayed = 10, Wins = 6, Losses = 2, Draws = 2, Points = 20 },
-                new Team { TeamName = "Team B", MatchesPlayed = 10, Wins = 5, Losses = 3, Draws = 2, Points = 17 },
-                new Team { TeamName = "Team C", MatchesPlayed = 10, Wins = 4, Losses = 4, Draws = 2, Points = 14 },
-                new Team { TeamName = "Team D", MatchesPlayed = 10, Wins = 3, Losses = 5, Draws = 2, Points = 11 },
-                new Team { TeamName = "Team E", MatchesPlayed = 10, Wins = 2, Losses = 6, Draws = 2, Points = 8 }
+                new Druzyna { Nazwa = "Druzyna A", ZagraneMecze = 10, Wygrane = 6, Przegrane = 2, Remisy = 2, Punkty = 20 },
+                new Druzyna { Nazwa = "Druzyna B", ZagraneMecze = 10, Wygrane = 5, Przegrane = 3, Remisy = 2, Punkty = 17 },
+                new Druzyna { Nazwa = "Druzyna C", ZagraneMecze = 10, Wygrane = 4, Przegrane = 4, Remisy = 2, Punkty = 14 },
+                new Druzyna { Nazwa = "Druzyna D", ZagraneMecze = 10, Wygrane = 3, Przegrane = 5, Remisy = 2, Punkty = 11 },
+                new Druzyna { Nazwa = "Druzyna E", ZagraneMecze = 10, Wygrane = 2, Przegrane = 6, Remisy = 2, Punkty = 8 }
             };
 
-            dataGrid.ItemsSource = teams;
+            dataGrid.ItemsSource = Druzyny;
         }
 
         private void TurniejFinalowyClick(object sender, RoutedEventArgs e)
@@ -32,15 +34,5 @@ namespace Kopakabana
             finaly.Show();
             this.Close();
         }
-    }
-
-    public class Team
-    {
-        public string TeamName { get; set; }
-        public int MatchesPlayed { get; set; }
-        public int Wins { get; set; }
-        public int Losses { get; set; }
-        public int Draws { get; set; }
-        public int Points { get; set; }
     }
 }

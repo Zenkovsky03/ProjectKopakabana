@@ -26,8 +26,8 @@ namespace Kopakabana
 
         private void NowyTurniejClick(object sender, RoutedEventArgs e)
         {
-            PrzedStartem przedStartem = new PrzedStartem();
-            przedStartem.Show();
+            WybierzTurniej wybierzTurniej = new WybierzTurniej();
+            wybierzTurniej.Show();
             this.Close();
         }
     }

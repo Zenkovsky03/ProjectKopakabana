@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Kopakabana
 {
-    class Gra
+    public class Gra
     {
         private int Id { get; set; }
         private DateTime Data { get; set; }

@@ -19,14 +19,16 @@ namespace Kopakabana
     /// </summary>
     public partial class Zarzadzaj : Window
     {
-        public Zarzadzaj()
+        Turniej Turniej { get; set; }
+        public Zarzadzaj(Turniej Turniej)
         {
             InitializeComponent();
+            this.Turniej = Turniej;
         }
 
         private void CofnijClick(object sender, RoutedEventArgs e)
         {
-            PrzedStartem przedStartem = new PrzedStartem();
+            PrzedStartem przedStartem = new PrzedStartem(this.Turniej);
             przedStartem.Show();
             this.Close();
         }

@@ -2,7 +2,7 @@ using System;
 
 namespace Kopakabana
 {
-    class SedziaPomocnicznySiatkowka : AbstractSedzia
+    public class SedziaPomocnicznySiatkowka : AbstractSedzia
     {
     }
 }
