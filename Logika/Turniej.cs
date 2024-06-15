@@ -22,22 +22,22 @@ namespace Kopakabana
             this.Druzyny.Remove(druzyna);
         }
 
-        public void ZglosDruzyne(Druzyna druzyna)
+        public void DodajSedziego(AbstractSedzia Sedzia)
         {
-            // TODO:
+            this.Sedziowie.Add(Sedzia);
         }
 
-        public void WycofajDruzyne(Druzyna druzyna)
+        public void UsunSedziego(AbstractSedzia Sedzia)
         {
-            // TODO:
+            this.Sedziowie.Remove(Sedzia);
+        }
+
+        public void WygenerujGry()
+        {
+            // tutaj robisz cala magie tego generowania gier i ich wynikow z listy druzyn i sedziow
         }
 
         public void PrzegladajDruzyne()
-        {
-            // TODO:
-        }
-
-        public void WycofajDruzyne(Gra gra)
         {
             // TODO:
         }
@@ -47,17 +47,12 @@ namespace Kopakabana
             // TODO:
         }
 
-        public void WygenerujFinaly()
-        {
-            // TODO:
-        }
-
         public void WyswietlTabeleWynikow()
         {
             // TODO:
         }
 
-        public void ZapiszStan(string plik)
+        public void ZapiszStan()
         {
             var druzyna = new
             {

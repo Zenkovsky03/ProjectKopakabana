@@ -20,30 +20,6 @@ namespace Kopakabana
             // TODO:
         }
 
-        public void ZapiszWynik()
-        {
-            var druzyna = new
-            {
-                Nazwa,
-                ZagraneMecze,
-                Wygrane,
-                Przegrane,
-                Remisy,
-                Punkty,
-                Zawodnicy
-            };
-
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
-
-            string json = JsonSerializer.Serialize(druzyna, options);
-            string fileName = $"Druzyna--{Nazwa}.json";
-
-            File.WriteAllText(fileName, json);
-        }
-
         public void DodajZawodnika(Zawodnik zawodnik)
         {
             this.Zawodnicy.Add(zawodnik);
