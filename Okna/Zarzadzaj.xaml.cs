@@ -24,18 +24,40 @@ namespace Kopakabana
         {
             InitializeComponent();
             this.Turniej = Turniej;
+            SprawdzStan();
+            ZaladujDane();
+
+        }
+        private void SprawdzStan()
+        {
             if (this.Turniej.Druzyny != null && this.Turniej.Druzyny.Count == 6)
             {
                 rozpocznij.IsEnabled = true;
                 dodajDruzyne.IsEnabled = false;
+            }
+            else
+            {
+                rozpocznij.IsEnabled = false;
+                dodajDruzyne.IsEnabled = true;
             }
             if (this.Turniej.Sedziowie != null && this.Turniej.Sedziowie.Count == 6)
             {
                 rozpocznij.IsEnabled = true;
                 dodajSedziego.IsEnabled = false;
             }
+            else
+            {
+                rozpocznij.IsEnabled = false;
+                dodajSedziego.IsEnabled = true;
+            }
+        }
+        private void ZaladujDane()
+        {
+            ListaDruzyn.ItemsSource = null;
+            ListaDruzyn.ItemsSource = this.Turniej.Druzyny;
 
-
+            listaSedziow.ItemsSource = null;
+            listaSedziow.ItemsSource = this.Turniej.Sedziowie;
         }
 
         private void CofnijClick(object sender, RoutedEventArgs e)
@@ -64,9 +86,16 @@ namespace Kopakabana
         {
             if (sender is Button button)
             {
-                string judgeName = button.Tag.ToString();
-                MessageBox.Show($"Usun {judgeName}");
-                // Implement your delete logic here
+                string imieSedziego = button.Tag.ToString();
+                for (int i = 0; i < this.Turniej.Sedziowie.Count; i++)
+                {
+                    if (this.Turniej.Sedziowie[i].Imie == imieSedziego)
+                        this.Turniej.UsunSedziego(this.Turniej.Sedziowie[i]);
+                }
+
+                MessageBox.Show($"Usunieto {imieSedziego}");
+                SprawdzStan();
+                ZaladujDane();
             }
         }
 
@@ -84,9 +113,16 @@ namespace Kopakabana
         {
             if (sender is Button button)
             {
-                string teamName = button.Tag.ToString();
-                MessageBox.Show($"Usun {teamName}");
-                // Implement your delete logic here
+                string nazwaDruzyny = button.Tag.ToString();
+                for(int i = 0; i < this.Turniej.Druzyny.Count; i++)
+                {
+                    if (this.Turniej.Druzyny[i].Nazwa == nazwaDruzyny)
+                        this.Turniej.UsunDruzyne(this.Turniej.Druzyny[i]);
+                }
+
+                MessageBox.Show($"Usunieto {nazwaDruzyny}");
+                SprawdzStan();
+                ZaladujDane();
             }
         }
 
@@ -99,7 +135,7 @@ namespace Kopakabana
 
         private void DodajSedziegoClick(object sender, RoutedEventArgs e)
         {
-            DodajSedziego dodaj = new DodajSedziego();
+            DodajSedziego dodaj = new DodajSedziego(this.Turniej);
             dodaj.Show();
             this.Close();
         }

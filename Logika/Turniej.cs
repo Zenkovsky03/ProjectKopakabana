@@ -12,6 +12,10 @@ namespace Kopakabana
         public List<AbstractSedzia> Sedziowie { get; set; }
         public List<Gra> Gry { get; set; }
 
+        public Turniej() { 
+            this.Druzyny = new List<Druzyna>();
+            this.Sedziowie = new List<AbstractSedzia>();
+        }
         public void DodajDruzyne(Druzyna druzyna)
         {
             this.Druzyny.Add(druzyna);

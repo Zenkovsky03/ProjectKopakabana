@@ -27,16 +27,7 @@ namespace Kopakabana
             this.Turniej = Turniej;
             if (this.Turniej.Dyscyplina is SiatkowkaPlazowa) 
             {
-                SedziaGlownySiatkowka glowny = new SedziaGlownySiatkowka();
-                SedziaPomocnicznySiatkowka pomocniczy = new SedziaPomocnicznySiatkowka();
-            }
-            else if (this.Turniej.Dyscyplina is DwaOgnie)
-            {
-                SedziaDwaOgnie glowny = new SedziaDwaOgnie();
-            }
-            else if (this.Turniej.Dyscyplina is PrzeciaganieLiny)
-            {
-                SedziaPrzeciaganieLiny glowny = new SedziaPrzeciaganieLiny();
+                sprawdz.Visibility = Visibility.Visible;
             }
         }
 
@@ -49,7 +40,44 @@ namespace Kopakabana
 
         private void DodajClick(object sender, RoutedEventArgs e)
         {
-            //logika edycji druzyny
+            if (imie.Text == "")
+                MessageBox.Show("Musisz uzupelnic dane ");
+            else
+            {
+                if (this.Turniej.Dyscyplina is SiatkowkaPlazowa)
+                {
+
+                    if (sprawdz.IsChecked == true)
+                    {
+                        SedziaGlownySiatkowka glowny = new SedziaGlownySiatkowka();
+                        glowny.setImie(imie.Text.ToString());
+                        this.Turniej.DodajSedziego(glowny);
+                        sprawdz.IsChecked = false;
+                    }
+                    else
+                    {
+                        SedziaPomocnicznySiatkowka pomocniczy = new SedziaPomocnicznySiatkowka();
+                        pomocniczy.setImie(imie.Text.ToString());
+                        this.Turniej.DodajSedziego(pomocniczy);
+                    }
+                }
+                if (this.Turniej.Dyscyplina is DwaOgnie)
+                {
+                    SedziaDwaOgnie dwaOgnieSedzia = new SedziaDwaOgnie();
+                    dwaOgnieSedzia.setImie(imie.Text.ToString());
+                    this.Turniej.DodajSedziego(dwaOgnieSedzia);
+                }
+                if (this.Turniej.Dyscyplina is PrzeciaganieLiny)
+                {
+                    SedziaPrzeciaganieLiny przeciagnieSedzia = new SedziaPrzeciaganieLiny();
+                    przeciagnieSedzia.setImie(imie.Text.ToString());
+                    this.Turniej.DodajSedziego(przeciagnieSedzia);
+                }
+                Zarzadzaj zarzadzaj = new Zarzadzaj(this.Turniej);
+                zarzadzaj.Show();
+                this.Close();
+            }
+            
         }
     }
 }

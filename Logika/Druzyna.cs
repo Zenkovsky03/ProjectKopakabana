@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.RightsManagement;
 using System.Text.Json;
 
 namespace Kopakabana
@@ -15,6 +16,9 @@ namespace Kopakabana
         public int Punkty { get; set; }
         public List<Zawodnik> Zawodnicy { get; set; }
 
+        public Druzyna() { 
+            this.Zawodnicy = new List<Zawodnik>();
+        }
         public void ZaplanujGre()
         {
             // TODO:

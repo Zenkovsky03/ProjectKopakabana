@@ -20,9 +20,9 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Width="200"/>
-                        <Button Content="Edytuj" Click="EdytujSedziegoClick" Tag="{Binding Name}" Margin="5,0"/>
-                        <Button Content="Usuń" Click="UsunSedziegoClick" Tag="{Binding Name}" Margin="5,0"/>
+                        <TextBlock Text="{Binding Imie}" VerticalAlignment="Center" Width="200"/>
+                        <Button Content="Edytuj" Click="EdytujSedziegoClick" Tag="{Binding Imie}" Margin="5,0"/>
+                        <Button Content="Usuń" Click="UsunSedziegoClick" Tag="{Binding Imie}" Margin="5,0"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
@@ -32,9 +32,9 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Width="200"/>
-                        <Button Content="Edytuj" Click="EdytujDruzyneClick" Tag="{Binding Name}" Margin="5,0"/>
-                        <Button Content="Usuń" Click="UsunDruzyneClick" Tag="{Binding Name}" Margin="5,0"/>
+                        <TextBlock Text="{Binding Nazwa}" VerticalAlignment="Center" Width="200"/>
+                        <Button Content="Edytuj" Click="EdytujDruzyneClick" Tag="{Binding Nazwa}" Margin="5,0"/>
+                        <Button Content="Usuń" Click="UsunDruzyneClick" Tag="{Binding Nazwa}" Margin="5,0"/>
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

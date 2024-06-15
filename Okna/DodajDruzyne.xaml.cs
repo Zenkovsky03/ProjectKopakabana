@@ -27,11 +27,6 @@ namespace Kopakabana
             InitializeComponent();
             this.Turniej = Turniej;
             this.Druzyna = new Druzyna();
-
-            if (zawodnik1 != null && zawodnik2 != null && zawodnik3 != null && zawodnik4 != null)
-            {
-                dodaj.IsEnabled = true;
-            }
         }
 
         private void CofnijClick(object sender, RoutedEventArgs e)
@@ -43,10 +38,23 @@ namespace Kopakabana
 
         private void DodajClick(object sender, RoutedEventArgs e)
         {
-            this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik1.Text));
-            this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik2.Text));
-            this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik3.Text));
-            this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik4.Text));
+            if (zawodnik1.Text == "" || zawodnik2.Text == "" || zawodnik3.Text == "" || zawodnik4.Text == "" || nazwaDruzyny.Text == "")
+            {
+                MessageBox.Show("Wszystkie pola musza byc uzupelnione");
+            }
+            else
+            {
+                this.Druzyna.Nazwa = nazwaDruzyny.Text;
+                this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik1.Text));
+                this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik2.Text));
+                this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik3.Text));
+                this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik4.Text));
+                this.Turniej.DodajDruzyne(this.Druzyna);
+                Zarzadzaj zarzadzaj = new Zarzadzaj(this.Turniej);
+                zarzadzaj.Show();
+                this.Close();
+            }
+
         }
     }
 }
