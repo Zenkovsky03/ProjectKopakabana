@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace Kopakabana
 {
     /// <summary>
-    /// Logika interakcji dla klasy WybierzTurniej.xaml
+    /// WYBIERZ TUNRIEJ
     /// </summary>
     public partial class WybierzTurniej : Window
     {

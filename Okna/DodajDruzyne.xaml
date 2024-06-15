@@ -10,7 +10,7 @@
     <Grid>
         <TextBlock HorizontalAlignment="Center" Margin="0,26,0,0" TextWrapping="Wrap" Text="Dodaj druzyne" VerticalAlignment="Top"/>
         <Button Content="Cofnij" HorizontalAlignment="Left" Margin="59,359,0,0" VerticalAlignment="Top" Click="CofnijClick" Height="29" Width="125"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="575,359,0,0" VerticalAlignment="Top" Click="DodajClick" Height="29" Width="144"/>
+        <Button x:Name="dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="575,359,0,0" VerticalAlignment="Top" Click="DodajClick" Height="29" Width="144" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="256,88,0,0" TextWrapping="Wrap" Text="Zawodnik 1: " VerticalAlignment="Top"/>
         <TextBox x:Name="zawodnik1" HorizontalAlignment="Left" Margin="349,87,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.344,-0.223"/>
         <TextBlock HorizontalAlignment="Left" Margin="256,121,0,0" TextWrapping="Wrap" Text="Zawodnik 2: " VerticalAlignment="Top"/>

@@ -16,7 +16,7 @@ using Kopakabana;
 namespace Kopakabana
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window1.xaml
+    /// ZASADY GRY 
     /// </summary>
     public partial class ZasadyGry : Window
     {

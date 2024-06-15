@@ -20,23 +20,33 @@ namespace Kopakabana
     public partial class DodajDruzyne : Window
     {
         Turniej Turniej { get; set; }
+        Druzyna Druzyna { get; set; }
 
-        public DodajDruzyne()
+        public DodajDruzyne(Turniej Turniej)
         {
             InitializeComponent();
             this.Turniej = Turniej;
+            this.Druzyna = new Druzyna();
+
+            if (zawodnik1 != null && zawodnik2 != null && zawodnik3 != null && zawodnik4 != null)
+            {
+                dodaj.IsEnabled = true;
+            }
         }
 
         private void CofnijClick(object sender, RoutedEventArgs e)
         {
             Zarzadzaj zarzadzaj = new Zarzadzaj(this.Turniej);
-            this.Close();
             zarzadzaj.Show();
+            this.Close();
         }
 
         private void DodajClick(object sender, RoutedEventArgs e)
         {
-            //logika dodania druzyny
+            this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik1.Text));
+            this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik2.Text));
+            this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik3.Text));
+            this.Druzyna.DodajZawodnika(new Zawodnik(zawodnik4.Text));
         }
     }
 }

@@ -21,17 +21,30 @@ namespace Kopakabana
     {
         Turniej Turniej { get; set; }
 
-        public DodajSedziego()
+        public DodajSedziego(Turniej Turniej)
         {
             InitializeComponent();
             this.Turniej = Turniej;
+            if (this.Turniej.Dyscyplina is SiatkowkaPlazowa) 
+            {
+                SedziaGlownySiatkowka glowny = new SedziaGlownySiatkowka();
+                SedziaPomocnicznySiatkowka pomocniczy = new SedziaPomocnicznySiatkowka();
+            }
+            else if (this.Turniej.Dyscyplina is DwaOgnie)
+            {
+                SedziaDwaOgnie glowny = new SedziaDwaOgnie();
+            }
+            else if (this.Turniej.Dyscyplina is PrzeciaganieLiny)
+            {
+                SedziaPrzeciaganieLiny glowny = new SedziaPrzeciaganieLiny();
+            }
         }
 
         private void CofnijClick(object sender, RoutedEventArgs e)
         {
             Zarzadzaj zarzadzaj = new Zarzadzaj(this.Turniej);
-            this.Close();
             zarzadzaj.Show();
+            this.Close();
         }
 
         private void DodajClick(object sender, RoutedEventArgs e)

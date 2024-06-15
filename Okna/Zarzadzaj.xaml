@@ -10,11 +10,11 @@
     <Grid>
         <Button Content="Cofnij" HorizontalAlignment="Left" Height="43" Margin="89,340,0,0" VerticalAlignment="Top" Width="124" Click="CofnijClick"/>
         <Button Content="Wgraj dane z pliku" HorizontalAlignment="Center" Height="43" Margin="0,340,0,0" VerticalAlignment="Top" Width="124"/>
-        <Button Content="Rozpocznij turniej" HorizontalAlignment="Left" Height="43" Margin="580,340,0,0" VerticalAlignment="Top" Width="124" Click="RozpocznijTurniejClick"/>
+        <Button x:Name="rozpocznij" Content="Rozpocznij turniej" HorizontalAlignment="Left" Height="43" Margin="580,340,0,0" VerticalAlignment="Top" Width="124" Click="RozpocznijTurniejClick" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="35,21,0,0" TextWrapping="Wrap" Text="Lista drużyn: " VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="567,24,0,0" TextWrapping="Wrap" Text="Lista sędziów: " VerticalAlignment="Top"/>
-        <Button Content="Dodaj drużynę" HorizontalAlignment="Left" Margin="132,19,0,0" VerticalAlignment="Top" Click="DodajDruzyneClick"/>
-        <Button Content="Dodaj sędziego" HorizontalAlignment="Left" Margin="671,20,0,0" VerticalAlignment="Top" Click="DodajSedziegoClick"/>
+        <Button x:Name="dodajDruzyne" Content="Dodaj drużynę" HorizontalAlignment="Left" Margin="132,19,0,0" VerticalAlignment="Top" Click="DodajDruzyneClick" IsEnabled="True"/>
+        <Button x:Name="dodajSedziego" Content="Dodaj sędziego" HorizontalAlignment="Left" Margin="671,20,0,0" VerticalAlignment="Top" Click="DodajSedziegoClick" IsEnabled="True"/>
 
         <ListBox x:Name="listaSedziow" Margin="433,69,11,148" BorderThickness="0">
             <ListBox.ItemTemplate>

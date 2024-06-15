@@ -24,7 +24,18 @@ namespace Kopakabana
         {
             InitializeComponent();
             this.Turniej = Turniej;
-            LoadData();
+            if (this.Turniej.Druzyny != null && this.Turniej.Druzyny.Count == 6)
+            {
+                rozpocznij.IsEnabled = true;
+                dodajDruzyne.IsEnabled = false;
+            }
+            if (this.Turniej.Sedziowie != null && this.Turniej.Sedziowie.Count == 6)
+            {
+                rozpocznij.IsEnabled = true;
+                dodajSedziego.IsEnabled = false;
+            }
+
+
         }
 
         private void CofnijClick(object sender, RoutedEventArgs e)
@@ -37,32 +48,6 @@ namespace Kopakabana
         private void ImportClick(object sender, RoutedEventArgs e)
         {
             //importowanie danych
-        }
-
-        private void LoadData()
-        {
-            // TODO: w zaleznosci od dyscypliny inny sedzia
-            var judges = new List<AbstractSedzia>
-            {
-                new SedziaGlownySiatkowka{ Imie = "Judge A" },
-                new SedziaPomocnicznySiatkowka { Imie = "Judge B" },
-                new SedziaPomocnicznySiatkowka { Imie = "Judge C" }
-            };
-
-            var teams = new List<Zawodnik>
-            {
-                new Zawodnik { Imie = "Team A" },
-                new Zawodnik { Imie = "Team B" },
-                new Zawodnik { Imie = "Team B" },
-                new Zawodnik { Imie = "Team B" },
-                new Zawodnik { Imie = "Team B" },
-                new Zawodnik { Imie = "Team B" },
-                new Zawodnik { Imie = "Team B" },
-                new Zawodnik { Imie = "Team B" }
-            };
-
-            listaSedziow.ItemsSource = judges;
-            ListaDruzyn.ItemsSource = teams;
         }
 
         private void EdytujSedziegoClick(object sender, RoutedEventArgs e)
@@ -107,7 +92,7 @@ namespace Kopakabana
 
         private void DodajDruzyneClick(object sender, RoutedEventArgs e)
         {
-            DodajDruzyne dodaj = new DodajDruzyne();
+            DodajDruzyne dodaj = new DodajDruzyne(this.Turniej);
             dodaj.Show();
             this.Close();
         }
@@ -115,8 +100,8 @@ namespace Kopakabana
         private void DodajSedziegoClick(object sender, RoutedEventArgs e)
         {
             DodajSedziego dodaj = new DodajSedziego();
-            this.Close();
             dodaj.Show();
+            this.Close();
         }
 
         private void RozpocznijTurniejClick(object sender, RoutedEventArgs e)
