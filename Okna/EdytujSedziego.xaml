@@ -1,0 +1,17 @@
+﻿<Window x:Class="Kopakabana.EdytujSedziego"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kopakabana"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="EdytujSedziego" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="Edytuj sędziego" VerticalAlignment="Top"/>
+        <Button Content="Cofnij" HorizontalAlignment="Left" Margin="72,352,0,0" VerticalAlignment="Top" Height="30" Width="111" Click="CofnijClick"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="605,352,0,0" VerticalAlignment="Top" Height="30" Width="111" Click="EdytujClick"/>
+        <TextBlock HorizontalAlignment="Left" Margin="255,164,0,0" TextWrapping="Wrap" Text="Imię: " VerticalAlignment="Top"/>
+        <TextBox x:Name="imie" HorizontalAlignment="Center" Margin="0,164,0,0" TextWrapping="Wrap" Text="blablabla" VerticalAlignment="Top" Width="120"/>
+    </Grid>
+</Window>

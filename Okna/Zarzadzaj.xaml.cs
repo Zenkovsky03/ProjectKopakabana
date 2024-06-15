@@ -24,13 +24,110 @@ namespace Kopakabana
         {
             InitializeComponent();
             this.Turniej = Turniej;
+            LoadData();
         }
 
         private void CofnijClick(object sender, RoutedEventArgs e)
         {
-            PrzedStartem przedStartem = new PrzedStartem(this.Turniej);
-            przedStartem.Show();
+            WybierzTurniej wybierzTurniej = new WybierzTurniej();
+            wybierzTurniej.Show();
             this.Close();
         }
+
+        private void ImportClick(object sender, RoutedEventArgs e)
+        {
+            //importowanie danych
+        }
+
+        private void LoadData()
+        {
+            var judges = new List<Person>
+            {
+                new Person { Name = "Judge A" },
+                new Person { Name = "Judge B" },
+                new Person { Name = "Judge C" }
+            };
+
+            var teams = new List<Person>
+            {
+                new Person { Name = "Team A" },
+                new Person { Name = "Team B" },
+                new Person { Name = "Team B" },
+                new Person { Name = "Team B" },
+                new Person { Name = "Team B" },
+                new Person { Name = "Team B" },
+                new Person { Name = "Team B" },
+                new Person { Name = "Team B" }
+            };
+
+            listaSedziow.ItemsSource = judges;
+            ListaDruzyn.ItemsSource = teams;
+        }
+
+        private void EdytujSedziegoClick(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                EdytujSedziego edytuj = new EdytujSedziego();
+                edytuj.Show();
+                this.Close();
+            }
+        }
+
+        private void UsunSedziegoClick(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                string judgeName = button.Tag.ToString();
+                MessageBox.Show($"Delete {judgeName}");
+                // Implement your delete logic here
+            }
+        }
+
+        private void EdytujDruzyneClick(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                EdytujDruzyne edytuj = new EdytujDruzyne();
+                edytuj.Show();
+                this.Close();
+            }
+        }
+
+        private void UsunDruzyneClick(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                string teamName = button.Tag.ToString();
+                MessageBox.Show($"Delete {teamName}");
+                // Implement your delete logic here
+            }
+        }
+
+        private void DodajDruzyneClick(object sender, RoutedEventArgs e)
+        {
+            DodajDruzyne dodaj = new DodajDruzyne();
+            dodaj.Show();
+            this.Close();
+        }
+
+        private void DodajSedziegoClick(object sender, RoutedEventArgs e)
+        {
+            DodajSedziego dodaj = new DodajSedziego();
+            this.Close();
+            dodaj.Show();
+        }
+
+        private void RozpocznijTurniejClick(object sender, RoutedEventArgs e)
+        {
+            TurniejGlowny turniejGlowny = new TurniejGlowny(this.Turniej);
+            turniejGlowny.Show();
+            this.Close();
+        }
+    }
+
+    public class Person
+    {
+        public string Name { get; set; }
     }
 }
