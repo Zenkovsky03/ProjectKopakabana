@@ -4,6 +4,6 @@ namespace Kopakabana
 {
     public abstract class AbstractDyscyplina
     {
-        private string Nazwa { get; set; }
+        public string Nazwa { get; set; }
     }
 }

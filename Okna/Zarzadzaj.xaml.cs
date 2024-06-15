@@ -41,23 +41,24 @@ namespace Kopakabana
 
         private void LoadData()
         {
-            var judges = new List<Person>
+            // TODO: w zaleznosci od dyscypliny inny sedzia
+            var judges = new List<AbstractSedzia>
             {
-                new Person { Name = "Judge A" },
-                new Person { Name = "Judge B" },
-                new Person { Name = "Judge C" }
+                new SedziaGlownySiatkowka{ Imie = "Judge A" },
+                new SedziaPomocnicznySiatkowka { Imie = "Judge B" },
+                new SedziaPomocnicznySiatkowka { Imie = "Judge C" }
             };
 
-            var teams = new List<Person>
+            var teams = new List<Zawodnik>
             {
-                new Person { Name = "Team A" },
-                new Person { Name = "Team B" },
-                new Person { Name = "Team B" },
-                new Person { Name = "Team B" },
-                new Person { Name = "Team B" },
-                new Person { Name = "Team B" },
-                new Person { Name = "Team B" },
-                new Person { Name = "Team B" }
+                new Zawodnik { Imie = "Team A" },
+                new Zawodnik { Imie = "Team B" },
+                new Zawodnik { Imie = "Team B" },
+                new Zawodnik { Imie = "Team B" },
+                new Zawodnik { Imie = "Team B" },
+                new Zawodnik { Imie = "Team B" },
+                new Zawodnik { Imie = "Team B" },
+                new Zawodnik { Imie = "Team B" }
             };
 
             listaSedziow.ItemsSource = judges;
@@ -79,7 +80,7 @@ namespace Kopakabana
             if (sender is Button button)
             {
                 string judgeName = button.Tag.ToString();
-                MessageBox.Show($"Delete {judgeName}");
+                MessageBox.Show($"Usun {judgeName}");
                 // Implement your delete logic here
             }
         }
@@ -99,7 +100,7 @@ namespace Kopakabana
             if (sender is Button button)
             {
                 string teamName = button.Tag.ToString();
-                MessageBox.Show($"Delete {teamName}");
+                MessageBox.Show($"Usun {teamName}");
                 // Implement your delete logic here
             }
         }
@@ -124,10 +125,5 @@ namespace Kopakabana
             turniejGlowny.Show();
             this.Close();
         }
-    }
-
-    public class Person
-    {
-        public string Name { get; set; }
     }
 }

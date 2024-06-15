@@ -8,9 +8,9 @@ namespace Kopakabana
     public class Turniej
     {
         public AbstractDyscyplina Dyscyplina { get; set; }
-        private List<Druzyna> Druzyny { get; set; }
-        private List<AbstractSedzia> Sedziowie { get; set; }
-        private List<Gra> Gry { get; set; }
+        public List<Druzyna> Druzyny { get; set; }
+        public List<AbstractSedzia> Sedziowie { get; set; }
+        public List<Gra> Gry { get; set; }
 
         public void DodajDruzyne(Druzyna druzyna)
         {

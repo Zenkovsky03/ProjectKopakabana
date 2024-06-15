@@ -4,7 +4,7 @@ namespace Kopakabana
 {
     public class Zawodnik
     {
-        private int Numer { get; set; }
-        private string Imie { get; set; }
+        public int Numer { get; set; }
+        public string Imie { get; set; }
     }
 }
