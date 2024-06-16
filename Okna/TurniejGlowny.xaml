@@ -8,20 +8,27 @@
         WindowStartupLocation="CenterScreen"
         Title="Turniej finalowy" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Margin="10,100,338,100">
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Margin="10,100,449,100" Background="White">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Druzyna" Binding="{Binding Nazwa}" />
                 <DataGridTextColumn Header="Zagrane mecze" Binding="{Binding ZagraneMecze}" />
-                <DataGridTextColumn Header="Wugrane" Binding="{Binding Wygrane}" />
+                <DataGridTextColumn Header="Wygrane" Binding="{Binding Wygrane}" />
                 <DataGridTextColumn Header="Przegrane" Binding="{Binding Przegrane}" />
-                <DataGridTextColumn Header="Remisy" Binding="{Binding Remisy}" />
-                <DataGridTextColumn Header="Punkty" Binding="{Binding Punkty}" />
+                <DataGridTextColumn Header="Punkty" Binding="{Binding Punkty}" SortMemberPath="Punkty"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock HorizontalAlignment="Left" Margin="367,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pl-pl" Text="Turniej: Siatkówka"/></TextBlock>
-        <Button Content="Symuluj mecz" HorizontalAlignment="Left" Margin="578,128,0,0" VerticalAlignment="Top" />
-        <Button Content="Symuluj tabelę" HorizontalAlignment="Left" Margin="578,217,0,0" VerticalAlignment="Top" />
-        <Button Content="Przejdź do turnieju finałowego" HorizontalAlignment="Left" Margin="533,276,0,0" VerticalAlignment="Top" Click="TurniejFinalowyClick"/>
+        <Button x:Name="symulujMeczBtn" Content="Symuluj mecz" HorizontalAlignment="Left" Margin="548,188,0,0" VerticalAlignment="Top" Click="LosujWynikiMeczuClick" />
+        <Button x:Name="kolejnyMeczBtn" Content="Rozpocznij kolejny mecz" HorizontalAlignment="Left" Margin="647,188,0,0" VerticalAlignment="Top" Click="RozegrajNastepnyMeczClick"/>
+        <Button x:Name="symulujTabeleBtn" Content="Symuluj tabelę" HorizontalAlignment="Left" Margin="468,382,0,0" VerticalAlignment="Top" Click="SymulujTabeleClick"/>
+        <Button x:Name="przejdzFinalyBtn" Content="Przejdź do turnieju finałowego" HorizontalAlignment="Left" Margin="596,382,0,0" VerticalAlignment="Top" Click="TurniejFinalowyClick" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Margin="509,59,0,0" TextWrapping="Wrap" Text="Aktualny mecz" VerticalAlignment="Top"/>
+        <TextBlock x:Name="druzyna1" HorizontalAlignment="Left" Margin="439,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="539,100,0,0" TextWrapping="Wrap" Text="vs" VerticalAlignment="Top"/>
+        <TextBlock x:Name="druzyna2" HorizontalAlignment="Left" Margin="603,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBlock x:Name="wynik1" HorizontalAlignment="Left" Margin="521,128,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="wynik2" HorizontalAlignment="Left" Margin="561,128,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="542,128,0,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -25,6 +25,7 @@ namespace Kopakabana
         {
             InitializeComponent();
             this.Turniej = Turniej;
+            MessageBox.Show(this.Turniej.Dyscyplina.Nazwa);
             if (this.Turniej.Dyscyplina is SiatkowkaPlazowa) 
             {
                 sprawdz.Visibility = Visibility.Visible;

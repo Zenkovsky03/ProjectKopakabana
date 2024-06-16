@@ -18,6 +18,11 @@ namespace Kopakabana
 
         public Druzyna() { 
             this.Zawodnicy = new List<Zawodnik>();
+            this.ZagraneMecze = 0;
+            this.Wygrane = 0;
+            this.Przegrane = 0;
+            this.Remisy = 0;
+            this.Punkty = 0;
         }
         public void ZaplanujGre()
         {

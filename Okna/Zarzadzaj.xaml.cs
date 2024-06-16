@@ -159,6 +159,8 @@ namespace Kopakabana
             {
                 string plik = dialog.FileName;
                 this.Turniej.OdczytajStan(plik);
+                ZaladujDane();
+                SprawdzStan();
             }
         }
     }

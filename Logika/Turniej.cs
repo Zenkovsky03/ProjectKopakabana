@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Linq;
 
 namespace Kopakabana
 {
@@ -15,6 +16,7 @@ namespace Kopakabana
         public Turniej() { 
             this.Druzyny = new List<Druzyna>();
             this.Sedziowie = new List<AbstractSedzia>();
+            this.Gry = new List<Gra>();
         }
         public void DodajDruzyne(Druzyna druzyna)
         {
@@ -38,7 +40,15 @@ namespace Kopakabana
 
         public void WygenerujGry()
         {
-            // tutaj robisz cala magie tego generowania gier i ich wynikow z listy druzyn i sedziow
+            for(int i = 0; i < this.Druzyny.Count; i++)
+            {
+                for (int j = i + 1; j < this.Druzyny.Count; j++)
+                {
+                    this.Gry.Add(new Gra(this.Druzyny[i], this.Druzyny[j]));
+                }
+            }
+
+            this.Gry = this.Gry.OrderBy(x => Random.Shared.Next()).ToList();
         }
 
         public void PrzegladajDruzyne()
@@ -60,10 +70,8 @@ namespace Kopakabana
         {
             var turniej = new
             {
-                this.Dyscyplina,
                 this.Druzyny,
-                this.Sedziowie,
-                this.Gry
+                this.Sedziowie
             };
 
             var options = new JsonSerializerOptions
@@ -87,10 +95,8 @@ namespace Kopakabana
 
             if (turniej != null)
             {
-                this.Dyscyplina = turniej.Dyscyplina;
                 this.Druzyny = turniej.Druzyny;
                 this.Sedziowie = turniej.Sedziowie;
-                this.Gry = turniej.Gry;
             }
 
         }
