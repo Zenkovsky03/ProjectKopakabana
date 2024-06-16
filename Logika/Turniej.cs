@@ -87,7 +87,6 @@ namespace Kopakabana
 
             if (turniej != null)
             {
-                
                 this.Dyscyplina = turniej.Dyscyplina;
                 this.Druzyny = turniej.Druzyny;
                 this.Sedziowie = turniej.Sedziowie;

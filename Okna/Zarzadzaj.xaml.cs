@@ -150,17 +150,15 @@ namespace Kopakabana
         private void WgrajDaneClick(object sender, RoutedEventArgs e)
         {
             var dialog = new Microsoft.Win32.OpenFileDialog();
-            dialog.FileName = "Document"; // Default file name
-            dialog.DefaultExt = ".json"; // Default file extension
-            dialog.Filter = "Json documents (.json)|*.json"; // Filter files by extension
+            dialog.FileName = "Document";
+            dialog.DefaultExt = ".json";
+            dialog.Filter = "Json documents (.json)|*.json";
             bool? rezultat = dialog.ShowDialog();
 
             if (rezultat == true)
             {
                 string plik = dialog.FileName;
                 this.Turniej.OdczytajStan(plik);
-                listaSedziow.Items.Refresh();
-                ListaDruzyn.Items.Refresh();
             }
         }
     }
