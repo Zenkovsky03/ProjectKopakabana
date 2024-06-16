@@ -9,7 +9,8 @@
         Title="Zarzadzaj" Height="450" Width="800">
     <Grid>
         <Button Content="Cofnij" HorizontalAlignment="Left" Height="43" Margin="89,340,0,0" VerticalAlignment="Top" Width="124" Click="CofnijClick"/>
-        <Button Content="Wgraj dane z pliku" HorizontalAlignment="Center" Height="43" Margin="0,340,0,0" VerticalAlignment="Top" Width="124"/>
+        <Button Content="Wgraj dane z pliku" HorizontalAlignment="Center" Height="43" Margin="0,340,0,0" VerticalAlignment="Top" Width="124" Click="WgrajDaneClick"/>
+        <Button Content="Zapisz dane do pliku" HorizontalAlignment="Center" Height="43" Margin="0,286,0,0" VerticalAlignment="Top" Width="124" Click="ZapiszDaneClick"/>
         <Button x:Name="rozpocznij" Content="Rozpocznij turniej" HorizontalAlignment="Left" Height="43" Margin="580,340,0,0" VerticalAlignment="Top" Width="124" Click="RozpocznijTurniejClick" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="35,21,0,0" TextWrapping="Wrap" Text="Lista drużyn: " VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="567,24,0,0" TextWrapping="Wrap" Text="Lista sędziów: " VerticalAlignment="Top"/>

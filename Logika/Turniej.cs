@@ -58,12 +58,12 @@ namespace Kopakabana
 
         public void ZapiszStan()
         {
-            var druzyna = new
+            var turniej = new
             {
-                Dyscyplina,
-                Druzyny,
-                Sedziowie,
-                Gry
+                this.Dyscyplina,
+                this.Druzyny,
+                this.Sedziowie,
+                this.Gry
             };
 
             var options = new JsonSerializerOptions
@@ -71,8 +71,10 @@ namespace Kopakabana
                 WriteIndented = true
             };
 
-            string json = JsonSerializer.Serialize(druzyna, options);
-            string fileName = $"Turniej-{Dyscyplina}.json";
+            DateTime localDateTime = DateTime.Now;
+            string localTimestamp = localDateTime.ToString("yyyy-MM-dd--HH-mm");
+            string json = JsonSerializer.Serialize(turniej, options);
+            string fileName = $"Turniej-{this.Dyscyplina.Nazwa}-{localTimestamp}.json";
 
             File.WriteAllText(fileName, json);
         }
@@ -81,20 +83,17 @@ namespace Kopakabana
         {
             string json = File.ReadAllText(plik);
 
-            var options = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            };
-
-            var turniej = JsonSerializer.Deserialize<Turniej>(json, options);
+            var turniej = JsonSerializer.Deserialize<Turniej>(json);
 
             if (turniej != null)
             {
-                Dyscyplina = turniej.Dyscyplina;
-                Druzyny = turniej.Druzyny;
-                Sedziowie = turniej.Sedziowie;
-                Gry = turniej.Gry;
+                
+                this.Dyscyplina = turniej.Dyscyplina;
+                this.Druzyny = turniej.Druzyny;
+                this.Sedziowie = turniej.Sedziowie;
+                this.Gry = turniej.Gry;
             }
+
         }
 
         public void wybierzDyscyplina(AbstractDyscyplina Dyscyplina)

@@ -67,11 +67,6 @@ namespace Kopakabana
             this.Close();
         }
 
-        private void ImportClick(object sender, RoutedEventArgs e)
-        {
-            //importowanie danych
-        }
-
         private void EdytujSedziegoClick(object sender, RoutedEventArgs e)
         {
             if (sender is Button button)
@@ -145,6 +140,28 @@ namespace Kopakabana
             TurniejGlowny turniejGlowny = new TurniejGlowny(this.Turniej);
             turniejGlowny.Show();
             this.Close();
+        }
+
+        private void ZapiszDaneClick(object sender, RoutedEventArgs e)
+        {
+            this.Turniej.ZapiszStan();
+        }
+
+        private void WgrajDaneClick(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Microsoft.Win32.OpenFileDialog();
+            dialog.FileName = "Document"; // Default file name
+            dialog.DefaultExt = ".json"; // Default file extension
+            dialog.Filter = "Json documents (.json)|*.json"; // Filter files by extension
+            bool? rezultat = dialog.ShowDialog();
+
+            if (rezultat == true)
+            {
+                string plik = dialog.FileName;
+                this.Turniej.OdczytajStan(plik);
+                listaSedziow.Items.Refresh();
+                ListaDruzyn.Items.Refresh();
+            }
         }
     }
 }

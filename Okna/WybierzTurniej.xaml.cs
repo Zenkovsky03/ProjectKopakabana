@@ -35,7 +35,9 @@ namespace Kopakabana
 
         private void WybierzSiatkowkePlazowaClick(object sender, RoutedEventArgs e)
         {
-            this.Turniej.wybierzDyscyplina(new SiatkowkaPlazowa());
+            SiatkowkaPlazowa siatkowka = new SiatkowkaPlazowa();
+            siatkowka.Nazwa = "Siatkowka";
+            this.Turniej.wybierzDyscyplina(siatkowka);
             Zarzadzaj zarzadzaj = new Zarzadzaj(this.Turniej);
             zarzadzaj.Show();
             this.Close();
@@ -43,7 +45,9 @@ namespace Kopakabana
 
         private void WybierzPrzeciaganieLinyClick(object sender, RoutedEventArgs e)
         {
-            this.Turniej.wybierzDyscyplina(new PrzeciaganieLiny());
+            PrzeciaganieLiny przeciaganieLiny = new PrzeciaganieLiny();
+            przeciaganieLiny.Nazwa = "Przeciaganie liny";
+            this.Turniej.wybierzDyscyplina(przeciaganieLiny);
             Zarzadzaj zarzadzaj = new Zarzadzaj(this.Turniej);
             zarzadzaj.Show();
             this.Close();
@@ -51,7 +55,9 @@ namespace Kopakabana
 
         private void WybierzDwaOgnieClick(object sender, RoutedEventArgs e)
         {
-            this.Turniej.wybierzDyscyplina(new DwaOgnie());
+            DwaOgnie dwaOgnie = new DwaOgnie();
+            dwaOgnie.Nazwa = "Dwa ognie";
+            this.Turniej.wybierzDyscyplina(dwaOgnie);
             Zarzadzaj zarzadzaj = new Zarzadzaj(this.Turniej);
             zarzadzaj.Show();
             this.Close();

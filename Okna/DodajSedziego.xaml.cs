@@ -51,6 +51,7 @@ namespace Kopakabana
                     {
                         SedziaGlownySiatkowka glowny = new SedziaGlownySiatkowka();
                         glowny.setImie(imie.Text.ToString());
+                        glowny.setCzyGlowny(true);
                         this.Turniej.DodajSedziego(glowny);
                         sprawdz.IsChecked = false;
                     }
@@ -58,6 +59,7 @@ namespace Kopakabana
                     {
                         SedziaPomocnicznySiatkowka pomocniczy = new SedziaPomocnicznySiatkowka();
                         pomocniczy.setImie(imie.Text.ToString());
+                        pomocniczy.setCzyGlowny(false);
                         this.Turniej.DodajSedziego(pomocniczy);
                     }
                 }
