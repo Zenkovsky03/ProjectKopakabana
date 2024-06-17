@@ -19,18 +19,18 @@ namespace Kopakabana
             this.Turniej = Turniej;
             this.numerMeczu = 0;
             this.Turniej.WygenerujGry();
-            LoadData();
+            ZaladujDane();
             RozpocznijMecz(this.numerMeczu);
         }
 
-        private void LoadData()
+        private void ZaladujDane()
         {
             dataGrid.ItemsSource = null;
             dataGrid.ItemsSource = this.Turniej.Druzyny;
 
-            SortDataGrid("Punkty", ListSortDirection.Descending);
+            PosortujDane("Punkty", ListSortDirection.Descending);
         }
-        private void SortDataGrid(string sortBy, ListSortDirection direction)
+        private void PosortujDane(string sortBy, ListSortDirection direction)
         {
             var collectionView = CollectionViewSource.GetDefaultView(dataGrid.ItemsSource);
             if (collectionView != null)
@@ -69,7 +69,7 @@ namespace Kopakabana
             d1.ZagraneMecze += 1;
             d2.ZagraneMecze += 1;
 
-            if (Random.Shared.Next(0, 2) == 0)
+            if (Random.Shared.Next(0, 2) == 0) // 0 - pierwsza druzyna wygrala, 1 - druga druzyna wygrala
             {
                 wynik1.Text = "2";
                 d1.Wygrane += 1;
@@ -91,7 +91,7 @@ namespace Kopakabana
             }
 
             symulujMeczBtn.IsEnabled = false;
-            LoadData();
+            ZaladujDane();
 
             this.numerMeczu += 1;
         }
@@ -105,16 +105,14 @@ namespace Kopakabana
             } else kolejnyMeczBtn.IsEnabled = true;
 
             LosujWynik(this.numerMeczu);
-
         }
 
         private void RozegrajNastepnyMeczClick(object sender, RoutedEventArgs e)
         {
-
             RozpocznijMecz(this.numerMeczu);
         }
 
-        private async void SymulujTabeleClick(object sender, RoutedEventArgs e)
+        private  void SymulujTabeleClick(object sender, RoutedEventArgs e)
         {
             symulujTabeleBtn.IsEnabled = false;
 
@@ -123,14 +121,15 @@ namespace Kopakabana
                 RozpocznijMecz(i);
                 LosujWynik(i);
 
-                await Task.Delay(500);
+                //await Task.Delay(500);
             }
 
+            przejdzFinalyBtn.IsEnabled = true;
         }
 
         private void TurniejFinalowyClick(object sender, RoutedEventArgs e)
         {
-            TurniejFinalowy finaly = new TurniejFinalowy();
+            TurniejFinalowy finaly = new TurniejFinalowy(this.Turniej);
             finaly.Show();
             this.Close();
         }

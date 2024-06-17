@@ -19,9 +19,26 @@ namespace Kopakabana
     /// </summary>
     public partial class Podium : Window
     {
-        public Podium()
+        Turniej Turniej { get; set; }
+        Druzyna pierwsza;
+        Druzyna druga;
+        Druzyna trzecia;
+        public Podium(Turniej turniej, Druzyna pierwsza, Druzyna druga, Druzyna trzecia)
         {
             InitializeComponent();
+            this.Turniej = turniej;
+            this.pierwsza = pierwsza;
+            this.druga = druga;
+            this.trzecia = trzecia;
+
+            InicjalizujPodium();
+        }
+
+        private void InicjalizujPodium()
+        {
+            druzynaPierwsza.Text = this.pierwsza.Nazwa;
+            druzynaDruga.Text = this.druga.Nazwa;
+            druzynaTrzecia.Text = this.trzecia.Nazwa;
         }
 
         private void NowyTurniejClick(object sender, RoutedEventArgs e)
