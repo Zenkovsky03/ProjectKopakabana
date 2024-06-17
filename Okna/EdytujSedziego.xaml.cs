@@ -20,11 +20,14 @@ namespace Kopakabana
     public partial class EdytujSedziego : Window
     {
         Turniej Turniej { get; set; }
+        string zapisaneImie { get; set; }
 
-        public EdytujSedziego()
+        public EdytujSedziego(Turniej Turniej, AbstractSedzia Sedzia)
         {
             InitializeComponent();
             this.Turniej = Turniej;
+            edytujImie.Text = Sedzia.Imie.ToString();
+            zapisaneImie = Sedzia.Imie.ToString();
         }
 
         private void CofnijClick(object sender, RoutedEventArgs e)
@@ -36,7 +39,20 @@ namespace Kopakabana
 
         private void EdytujClick(object sender, RoutedEventArgs e)
         {
-            //logika edycji druzyny
+            if (edytujImie.Text == "")
+                MessageBox.Show("Musisz uzupelnic dane ");
+            else
+            {
+                AbstractSedzia edytowanySedzia = Turniej.Sedziowie.FirstOrDefault(s => s.Imie == this.zapisaneImie);
+
+                if (edytowanySedzia != null)
+                {
+                    edytowanySedzia.Imie = edytujImie.Text;
+                }
+                Zarzadzaj zarzadzaj = new Zarzadzaj(this.Turniej);
+                zarzadzaj.Show();
+                this.Close();
+            }
         }
     }
 }

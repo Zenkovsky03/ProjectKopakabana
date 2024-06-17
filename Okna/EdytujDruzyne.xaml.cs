@@ -20,11 +20,19 @@ namespace Kopakabana
     public partial class EdytujDruzyne : Window
     {
         Turniej Turniej { get; set; }
+        Druzyna Druzyna { get; set; }
 
-        public EdytujDruzyne()
+        public EdytujDruzyne(Turniej Turniej, Druzyna Druzyna)
         {
             InitializeComponent();
             this.Turniej = Turniej;
+            this.Druzyna = Druzyna;
+            edytujNazwaDruzyny.Text = this.Druzyna.Nazwa;
+            Edytujzawodnik1.Text = this.Druzyna.Zawodnicy[0].Imie.ToString();
+            Edytujzawodnik2.Text = this.Druzyna.Zawodnicy[1].Imie.ToString();
+            Edytujzawodnik3.Text = this.Druzyna.Zawodnicy[2].Imie.ToString();
+            Edytujzawodnik4.Text = this.Druzyna.Zawodnicy[3].Imie.ToString();
+
         }
 
         private void CofnijClick(object sender, RoutedEventArgs e)
@@ -36,7 +44,27 @@ namespace Kopakabana
 
         private void EdytujClick(object sender, RoutedEventArgs e)
         {
-            //logika edycji druzyny
+            if (Edytujzawodnik1.Text == "" || Edytujzawodnik2.Text == "" || Edytujzawodnik3.Text == "" || Edytujzawodnik4.Text == "" || edytujNazwaDruzyny.Text == "")
+            {
+                MessageBox.Show("Wszystkie pola musza byc uzupelnione");
+            }
+            else if (this.Turniej.Druzyny
+                .Where(d => d != this.Druzyna) 
+                .Any(d => d.Nazwa == edytujNazwaDruzyny.Text))
+            {
+                MessageBox.Show("Ta nazwa druzyny juz istnieje, wymysl cos innego");
+            }
+            else
+            {
+                this.Druzyna.Nazwa = edytujNazwaDruzyny.Text;
+                this.Druzyna.Zawodnicy[0].Imie = Edytujzawodnik1.Text;
+                this.Druzyna.Zawodnicy[1].Imie = Edytujzawodnik2.Text;
+                this.Druzyna.Zawodnicy[2].Imie = Edytujzawodnik3.Text;
+                this.Druzyna.Zawodnicy[3].Imie = Edytujzawodnik4.Text;
+                Zarzadzaj zarzadzaj = new Zarzadzaj(this.Turniej);
+                zarzadzaj.Show();
+                this.Close();
+            }
         }
     }
 }

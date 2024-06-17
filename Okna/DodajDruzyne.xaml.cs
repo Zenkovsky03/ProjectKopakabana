@@ -41,6 +41,9 @@ namespace Kopakabana
             if (zawodnik1.Text == "" || zawodnik2.Text == "" || zawodnik3.Text == "" || zawodnik4.Text == "" || nazwaDruzyny.Text == "")
             {
                 MessageBox.Show("Wszystkie pola musza byc uzupelnione");
+            }else if (this.Turniej.Druzyny.Any(d => d.Nazwa == nazwaDruzyny.Text))
+            {
+                MessageBox.Show("Ta nazwa druzyny juz istnieje, wymysl cos innego");
             }
             else
             {

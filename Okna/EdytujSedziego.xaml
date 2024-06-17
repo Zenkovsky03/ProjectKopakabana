@@ -10,8 +10,9 @@
     <Grid>
         <TextBlock HorizontalAlignment="Center" Margin="0,28,0,0" TextWrapping="Wrap" Text="Edytuj sędziego" VerticalAlignment="Top"/>
         <Button Content="Cofnij" HorizontalAlignment="Left" Margin="72,352,0,0" VerticalAlignment="Top" Height="30" Width="111" Click="CofnijClick"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" Margin="605,352,0,0" VerticalAlignment="Top" Height="30" Width="111" Click="EdytujClick"/>
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="605,352,0,0" VerticalAlignment="Top" Height="30" Width="111" Click="EdytujClick"/>
         <TextBlock HorizontalAlignment="Left" Margin="255,164,0,0" TextWrapping="Wrap" Text="Imię: " VerticalAlignment="Top"/>
-        <TextBox x:Name="imie" HorizontalAlignment="Center" Margin="0,164,0,0" TextWrapping="Wrap" Text="blablabla" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="edytujImie" HorizontalAlignment="Center" Margin="0,164,0,0" TextWrapping="Wrap" Text="blablabla" VerticalAlignment="Top" Width="120"/>
+        <CheckBox x:Name="edytujSprawdz" Content="Sedzia glowny" HorizontalAlignment="Left" Margin="340,0,0,0" VerticalAlignment="Center" Visibility="Visible"/>
     </Grid>
 </Window>

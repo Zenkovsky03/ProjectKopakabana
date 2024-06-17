@@ -71,7 +71,7 @@ namespace Kopakabana
         {
             if (sender is Button button)
             {
-                EdytujSedziego edytuj = new EdytujSedziego();
+                EdytujSedziego edytuj = new EdytujSedziego(this.Turniej, this.Turniej.Sedziowie.FirstOrDefault(s => s.Imie == button.Tag.ToString()));
                 edytuj.Show();
                 this.Close();
             }
@@ -98,7 +98,7 @@ namespace Kopakabana
         {
             if (sender is Button button)
             {
-                EdytujDruzyne edytuj = new EdytujDruzyne();
+                EdytujDruzyne edytuj = new EdytujDruzyne(this.Turniej, this.Turniej.Druzyny.FirstOrDefault(d => d.Nazwa == button.Tag.ToString()));
                 edytuj.Show();
                 this.Close();
             }

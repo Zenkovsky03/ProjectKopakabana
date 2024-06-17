@@ -34,7 +34,7 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Nazwa}" VerticalAlignment="Center" Width="200"/>
-                        <Button Content="Edytuj" Click="EdytujDruzyneClick" Tag="{Binding Nazwa}" Margin="5,0"/>
+                        <Button x:Name="edycjaPrzycisk" Content="Edytuj" Click="EdytujDruzyneClick" Tag="{Binding Nazwa}" Margin="5,0"/>
                         <Button Content="Usuń" Click="UsunDruzyneClick" Tag="{Binding Nazwa}" Margin="5,0"/>
                     </StackPanel>
                 </DataTemplate>
