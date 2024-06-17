@@ -51,21 +51,6 @@ namespace Kopakabana
             this.Gry = this.Gry.OrderBy(x => Random.Shared.Next()).ToList();
         }
 
-        public void PrzegladajDruzyne()
-        {
-            // TODO:
-        }
-
-        public void WygenerujPolfinaly()
-        {
-            // TODO:
-        }
-
-        public void WyswietlTabeleWynikow()
-        {
-            // TODO:
-        }
-
         public void ZapiszStan(string sciezka)
         {
             var turniej = new
