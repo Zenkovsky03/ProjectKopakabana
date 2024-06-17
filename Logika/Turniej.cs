@@ -66,7 +66,7 @@ namespace Kopakabana
             // TODO:
         }
 
-        public void ZapiszStan()
+        public void ZapiszStan(string sciezka)
         {
             var turniej = new
             {
@@ -79,12 +79,12 @@ namespace Kopakabana
                 WriteIndented = true
             };
 
-            DateTime localDateTime = DateTime.Now;
-            string localTimestamp = localDateTime.ToString("yyyy-MM-dd--HH-mm");
+            DateTime dateTime = DateTime.Now;
+            string aktualnyTimestamp = dateTime.ToString("yyyy-MM-dd--HH-mm");
             string json = JsonSerializer.Serialize(turniej, options);
-            string fileName = $"Turniej-{this.Dyscyplina.Nazwa}-{localTimestamp}.json";
+            string pelnaSciezka = $"{sciezka}/Turniej-{this.Dyscyplina.Nazwa}-{aktualnyTimestamp}.json";
 
-            File.WriteAllText(fileName, json);
+            File.WriteAllText(pelnaSciezka, json);
         }
 
         public void OdczytajStan(string plik)

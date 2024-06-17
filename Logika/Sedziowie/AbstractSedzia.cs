@@ -7,12 +7,12 @@ namespace Kopakabana
         public string Imie { get; set; }
         public bool CzyGlowny { get; set; }
 
-        public void setImie(string Imie)
+        public virtual void setImie(string Imie)
         {
             this.Imie = Imie;
         }
 
-        public void setCzyGlowny(bool Flaga)
+        public virtual void setCzyGlowny(bool Flaga)
         {
             this.CzyGlowny = Flaga;
         }

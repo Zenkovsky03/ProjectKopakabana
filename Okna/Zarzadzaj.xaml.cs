@@ -144,7 +144,14 @@ namespace Kopakabana
 
         private void ZapiszDaneClick(object sender, RoutedEventArgs e)
         {
-            this.Turniej.ZapiszStan();
+            var dialog = new Microsoft.Win32.OpenFolderDialog();
+            bool? rezultat = dialog.ShowDialog();
+
+            if (rezultat == true)
+            {
+                string wybranaSciezka = dialog.FolderName;
+                this.Turniej.ZapiszStan(wybranaSciezka);
+            }
         }
 
         private void WgrajDaneClick(object sender, RoutedEventArgs e)
