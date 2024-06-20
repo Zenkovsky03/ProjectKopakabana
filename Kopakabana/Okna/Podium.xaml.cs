@@ -82,7 +82,7 @@ namespace Kopakabana
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Nie udało się zapisać danych do pliku. Spróbuj ponownie.");
             }
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Linq;
+using System.Windows;
 
 namespace Kopakabana
 {
@@ -75,7 +76,7 @@ namespace Kopakabana
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Nie uda³o siê zapisaæ danych do pliku. Spróbuj ponownie.");
             }
         }
 
