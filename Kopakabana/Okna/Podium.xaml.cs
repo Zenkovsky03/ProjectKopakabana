@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Kopakabana
 {
@@ -46,6 +48,35 @@ namespace Kopakabana
             WybierzTurniej wybierzTurniej = new WybierzTurniej();
             wybierzTurniej.Show();
             this.Close();
+        }
+
+        private void ZapiszDaneDoPlikuClick(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Microsoft.Win32.OpenFolderDialog();
+            bool? rezultat = dialog.ShowDialog();
+
+            if (rezultat == true)
+            {
+                string wybranaSciezka = dialog.FolderName;
+                var dane = new
+                {
+                    this.pierwsza,
+                    this.druga,
+                    this.trzecia
+                };
+
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                };
+
+                DateTime dateTime = DateTime.Now;
+                string aktualnyTimestamp = dateTime.ToString("yyyy-MM-dd--HH-mm");
+                string json = JsonSerializer.Serialize(dane, options);
+                string pelnaSciezka = $"{wybranaSciezka}/Turniej-{this.Turniej.Dyscyplina.Nazwa}-{aktualnyTimestamp}-Podium.json";
+
+                File.WriteAllText(pelnaSciezka, json);
+            }
         }
     }
 }
