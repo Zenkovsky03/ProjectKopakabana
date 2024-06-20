@@ -1,0 +1,186 @@
+{
+  "Druzyny": [
+    {
+      "Nazwa": "Druzyna1",
+      "ZagraneMecze": 0,
+      "Wygrane": 0,
+      "Przegrane": 0,
+      "Remisy": 0,
+      "Punkty": 0,
+      "Zawodnicy": [
+        {
+          "Numer": 70,
+          "Imie": "a"
+        },
+        {
+          "Numer": 42,
+          "Imie": "b"
+        },
+        {
+          "Numer": 46,
+          "Imie": "c"
+        },
+        {
+          "Numer": 20,
+          "Imie": "d"
+        }
+      ]
+    },
+    {
+      "Nazwa": "Druzyna2",
+      "ZagraneMecze": 0,
+      "Wygrane": 0,
+      "Przegrane": 0,
+      "Remisy": 0,
+      "Punkty": 0,
+      "Zawodnicy": [
+        {
+          "Numer": 57,
+          "Imie": "a"
+        },
+        {
+          "Numer": 16,
+          "Imie": "b"
+        },
+        {
+          "Numer": 35,
+          "Imie": "c"
+        },
+        {
+          "Numer": 40,
+          "Imie": "d"
+        }
+      ]
+    },
+    {
+      "Nazwa": "Druzyna3",
+      "ZagraneMecze": 0,
+      "Wygrane": 0,
+      "Przegrane": 0,
+      "Remisy": 0,
+      "Punkty": 0,
+      "Zawodnicy": [
+        {
+          "Numer": 50,
+          "Imie": "a"
+        },
+        {
+          "Numer": 41,
+          "Imie": "b"
+        },
+        {
+          "Numer": 88,
+          "Imie": "c"
+        },
+        {
+          "Numer": 59,
+          "Imie": "d"
+        }
+      ]
+    },
+    {
+      "Nazwa": "Druzyna4",
+      "ZagraneMecze": 0,
+      "Wygrane": 0,
+      "Przegrane": 0,
+      "Remisy": 0,
+      "Punkty": 0,
+      "Zawodnicy": [
+        {
+          "Numer": 95,
+          "Imie": "a"
+        },
+        {
+          "Numer": 67,
+          "Imie": "b"
+        },
+        {
+          "Numer": 87,
+          "Imie": "c"
+        },
+        {
+          "Numer": 1,
+          "Imie": "d"
+        }
+      ]
+    },
+    {
+      "Nazwa": "Druzyna5",
+      "ZagraneMecze": 0,
+      "Wygrane": 0,
+      "Przegrane": 0,
+      "Remisy": 0,
+      "Punkty": 0,
+      "Zawodnicy": [
+        {
+          "Numer": 76,
+          "Imie": "a"
+        },
+        {
+          "Numer": 83,
+          "Imie": "b"
+        },
+        {
+          "Numer": 37,
+          "Imie": "c"
+        },
+        {
+          "Numer": 45,
+          "Imie": "d"
+        }
+      ]
+    },
+    {
+      "Nazwa": "Druzyna6",
+      "ZagraneMecze": 0,
+      "Wygrane": 0,
+      "Przegrane": 0,
+      "Remisy": 0,
+      "Punkty": 0,
+      "Zawodnicy": [
+        {
+          "Numer": 66,
+          "Imie": "a"
+        },
+        {
+          "Numer": 58,
+          "Imie": "b"
+        },
+        {
+          "Numer": 18,
+          "Imie": "c"
+        },
+        {
+          "Numer": 94,
+          "Imie": "d"
+        }
+      ]
+    }
+  ],
+  "Sedziowie": [
+    {
+      "Imie": "Igor",
+      "CzyGlowny": true
+    },
+    {
+      "Imie": "Mateusz",
+      "CzyGlowny": true
+    },
+    {
+      "Imie": "Maciek",
+      "CzyGlowny": true
+    },
+    {
+      "Imie": "Adam",
+      "CzyGlowny": false
+    },
+    {
+      "Imie": "Bartek",
+      "CzyGlowny": false
+    },
+    {
+      "Imie": "Kuba",
+      "CzyGlowny": false
+    }
+  ]
+}
