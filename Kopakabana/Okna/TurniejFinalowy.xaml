@@ -6,44 +6,93 @@
         xmlns:local="clr-namespace:Kopakabana"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="TurniejFinalowy" Height="450" Width="800">
-    <Grid RenderTransformOrigin="0.567,0.517" Margin="0,0,0,4">
-        <TextBlock x:Name="nazwaTurnieju" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <Line X1="20" Y1="80" X2="150" Y2="80" Stroke="Black" StrokeThickness="2"/>
-        <Line X1="20" Y1="160" X2="150" Y2="160" Stroke="Black" StrokeThickness="2"/>
-        <Line X1="20" Y1="240" X2="150" Y2="240" Stroke="Black" StrokeThickness="2"/>
-        <Line X1="20" Y1="320" X2="150" Y2="320" Stroke="Black" StrokeThickness="2"/>
-        <Line X1="150" Y1="80" X2="150" Y2="160" Stroke="Black" StrokeThickness="2"/>
-        <Line X1="150" Y1="240" X2="150" Y2="320" Stroke="Black" StrokeThickness="2"/>
-        <Line X1="150" Y1="120" X2="280" Y2="120" Stroke="Black" StrokeThickness="2"/>
-        <Line X1="150" Y1="280" X2="280" Y2="280" Stroke="Black" StrokeThickness="2"/>
-        <Line X1="280" Y1="120" X2="280" Y2="280" Stroke="Black" StrokeThickness="2"/>
-        <Line X1="280" Y1="200" X2="410" Y2="200" Stroke="Black" StrokeThickness="2"/>
-        <TextBlock x:Name="polfinal1" HorizontalAlignment="Left" Margin="20,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122"/>
-        <TextBlock x:Name="polfinal2" HorizontalAlignment="Left" Margin="20,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
-        <TextBlock x:Name="polfinal3" HorizontalAlignment="Left" Margin="20,215,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
-        <TextBlock x:Name="polfinal4" HorizontalAlignment="Left" Margin="20,294,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="18" RenderTransformOrigin="0.508,-0.664"/>
-        <TextBlock x:Name="final1" HorizontalAlignment="Left" Margin="159,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122"/>
-        <TextBlock x:Name="final2" HorizontalAlignment="Left" Margin="159,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
-        <TextBlock x:Name="zwyciezca" HorizontalAlignment="Left" Margin="288,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122"/>
-        <Button x:Name="symulujMeczBtn" Content="Symuluj mecz" HorizontalAlignment="Left" Margin="523,203,0,0" VerticalAlignment="Top" Click="LosujWynikiMeczuClick"/>
-        <Button x:Name="symulujDrabinkeBtn" Content="Symuluj turniej" HorizontalAlignment="Left" Margin="523,241,0,0" VerticalAlignment="Top" Click="SymulujDrabinkeClick"/>
-        <Button x:Name="pokazPodiumBtn" Content="Pokaż podium" HorizontalAlignment="Left" Margin="641,241,0,0" VerticalAlignment="Top" IsEnabled="false" Click="PodiumClick"/>
-        <TextBlock x:Name="druzyna1" HorizontalAlignment="Left" Margin="439,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="539,100,0,0" TextWrapping="Wrap" Text="vs" VerticalAlignment="Top"/>
-        <TextBlock x:Name="druzyna2" HorizontalAlignment="Left" Margin="603,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBlock x:Name="wynik1" HorizontalAlignment="Left" Margin="521,128,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="wynik2" HorizontalAlignment="Left" Margin="561,128,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="542,128,0,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top"/>
-        <Button x:Name="kolejnyMeczBtn" Content="Rozpocznij kolejny mecz" HorizontalAlignment="Left" Margin="641,0,0,0" VerticalAlignment="Center" Click="RozegrajNastepnyMeczClick"/>
-        <Line X1="20" Y1="260" X2="150" Y2="260" Stroke="Black" StrokeThickness="2" Margin="250,67,-250,-67"/>
-        <Line X1="20" Y1="340" X2="150" Y2="340" Stroke="Black" StrokeThickness="2" Margin="250,67,-250,-67"/>
-        <Line X1="150" Y1="260" X2="150" Y2="340" Stroke="Black" StrokeThickness="2" Margin="250,67,-250,-67"/>
-        <Line X1="150" Y1="300" X2="280" Y2="300" Stroke="Black" StrokeThickness="2" Margin="250,70,-250,-70"/>
-        <TextBlock x:Name="braz1" HorizontalAlignment="Left" Margin="272,307,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
-        <TextBlock x:Name="braz2" HorizontalAlignment="Left" Margin="272,382,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
-        <TextBlock x:Name="brazZwyciezca" HorizontalAlignment="Left" Margin="415,349,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
-        <TextBlock x:Name="sedziowie" HorizontalAlignment="Left" Margin="467,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        Title="TurniejFinalowy" Height="600" Width="1000">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
 
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="10">
+        <TextBlock x:Name="nazwaTurnieju" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+
+        <!-- Drabinka półfinałów -->
+        <Line X1="20" Y1="130" X2="150" Y2="130" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="20" Y1="210" X2="150" Y2="210" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="20" Y1="290" X2="150" Y2="290" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="20" Y1="370" X2="150" Y2="370" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="150" Y1="130" X2="150" Y2="210" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="150" Y1="290" X2="150" Y2="370" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="150" Y1="170" X2="280" Y2="170" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="150" Y1="330" X2="280" Y2="330" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="280" Y1="170" X2="280" Y2="330" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="280" Y1="250" X2="410" Y2="250" Stroke="Black" StrokeThickness="2"/>
+
+        <!-- Drabinka finału -->
+        <Line X1="20" Y1="310" X2="150" Y2="310" Stroke="Black" StrokeThickness="2" Margin="250,67,-250,-67"/>
+        <Line X1="20" Y1="390" X2="150" Y2="390" Stroke="Black" StrokeThickness="2" Margin="250,67,-250,-67"/>
+        <Line X1="150" Y1="310" X2="150" Y2="390" Stroke="Black" StrokeThickness="2" Margin="250,67,-250,-67"/>
+        <Line X1="150" Y1="350" X2="280" Y2="350" Stroke="Black" StrokeThickness="2" Margin="250,70,-250,-70"/>
+
+        <!-- Tekst dla drużyn i wyniki -->
+        <TextBlock HorizontalAlignment="Left" Margin="20,65,0,0" TextWrapping="Wrap" Text="Drabinka finałowa" VerticalAlignment="Top" Width="200"/>
+        <TextBlock x:Name="polfinal1" HorizontalAlignment="Left" Margin="20,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122"/>
+        <TextBlock x:Name="polfinal2" HorizontalAlignment="Left" Margin="20,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
+        <TextBlock x:Name="polfinal3" HorizontalAlignment="Left" Margin="20,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
+        <TextBlock x:Name="polfinal4" HorizontalAlignment="Left" Margin="20,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122" Height="18" RenderTransformOrigin="0.508,-0.664"/>
+        <TextBlock x:Name="final1" HorizontalAlignment="Left" Margin="159,145,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122"/>
+        <TextBlock x:Name="final2" HorizontalAlignment="Left" Margin="159,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
+        <TextBlock x:Name="zwyciezca" HorizontalAlignment="Left" Margin="288,226,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122"/>
+        <TextBlock x:Name="braz1" HorizontalAlignment="Left" Margin="272,357,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <TextBlock x:Name="braz2" HorizontalAlignment="Left" Margin="272,432,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <TextBlock x:Name="brazZwyciezca" HorizontalAlignment="Left" Margin="415,399,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <TextBlock HorizontalAlignment="Left" Margin="336,326,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"><Run Text="Drabinka "/><Run Language="pl-pl" Text="o brązowy medal"/></TextBlock>
+
+        <!-- Informacje o meczu -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0">
+            <TextBlock x:Name="druzyna1" Text=""/>
+            <TextBlock Text=" vs " />
+            <TextBlock x:Name="druzyna2" Text=""/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0">
+            <TextBlock x:Name="wynik1" Text="0"/>
+            <TextBlock Text=" : " />
+            <TextBlock x:Name="wynik2" Text="0"/>
+        </StackPanel>
+        <TextBlock x:Name="sedziowie" HorizontalAlignment="Center" Margin="0,130,0,0" TextWrapping="Wrap" Text=""/>
+
+        <!-- Przyciski -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,20,0">
+            <Button x:Name="symulujMeczBtn" Content="Symuluj mecz" Click="LosujWynikiMeczuClick"/>
+            <Button x:Name="kolejnyMeczBtn" Content="Rozpocznij kolejny mecz" Click="RozegrajNastepnyMeczClick"/>
+            <Button x:Name="symulujDrabinkeBtn" Content="Symuluj turniej" Click="SymulujDrabinkeClick"/>
+            <Button x:Name="pokazPodiumBtn" Content="Pokaż podium" Click="PodiumClick" IsEnabled="False"/>
+        </StackPanel>
     </Grid>
 </Window>

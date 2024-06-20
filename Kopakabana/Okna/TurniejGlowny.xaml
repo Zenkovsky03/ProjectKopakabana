@@ -6,29 +6,90 @@
         xmlns:local="clr-namespace:Kopakabana"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Turniej finalowy" Height="450" Width="800">
+        Title="Turniej finalowy" Height="600" Width="1000">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+
+        <Style TargetType="CheckBox">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Margin="10,100,449,100" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="nazwaTurnieju" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="10,24,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Text="Turniej"/>
+
+        <DataGrid x:Name="dataGrid" Grid.Row="1" Grid.Column="0" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" Margin="10" Background="White">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Druzyna" Binding="{Binding Nazwa}" />
+                <DataGridTextColumn Header="Drużyna" Binding="{Binding Nazwa}" />
                 <DataGridTextColumn Header="Zagrane mecze" Binding="{Binding ZagraneMecze}" />
                 <DataGridTextColumn Header="Wygrane" Binding="{Binding Wygrane}" />
                 <DataGridTextColumn Header="Przegrane" Binding="{Binding Przegrane}" />
                 <DataGridTextColumn Header="Punkty" Binding="{Binding Punkty}" SortMemberPath="Punkty"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock x:Name="nazwaTurnieju" HorizontalAlignment="Left" Margin="367,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pl-pl" Text=""/></TextBlock>
-        <Button x:Name="symulujMeczBtn" Content="Symuluj mecz" HorizontalAlignment="Left" Margin="548,188,0,0" VerticalAlignment="Top" Click="LosujWynikiMeczuClick" />
-        <Button x:Name="kolejnyMeczBtn" Content="Rozpocznij kolejny mecz" HorizontalAlignment="Left" Margin="647,188,0,0" VerticalAlignment="Top" Click="RozegrajNastepnyMeczClick"/>
-        <Button x:Name="symulujTabeleBtn" Content="Symuluj tabelę" HorizontalAlignment="Left" Margin="468,382,0,0" VerticalAlignment="Top" Click="SymulujTabeleClick"/>
-        <Button x:Name="przejdzFinalyBtn" Content="Przejdź do turnieju finałowego" HorizontalAlignment="Left" Margin="596,382,0,0" VerticalAlignment="Top" Click="TurniejFinalowyClick" IsEnabled="False"/>
-        <TextBlock HorizontalAlignment="Left" Margin="509,59,0,0" TextWrapping="Wrap" Text="Aktualny mecz" VerticalAlignment="Top"/>
-        <TextBlock x:Name="druzyna1" HorizontalAlignment="Left" Margin="439,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="539,100,0,0" TextWrapping="Wrap" Text="vs" VerticalAlignment="Top"/>
-        <TextBlock x:Name="druzyna2" HorizontalAlignment="Left" Margin="603,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBlock x:Name="wynik1" HorizontalAlignment="Left" Margin="521,128,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="wynik2" HorizontalAlignment="Left" Margin="561,128,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="542,128,0,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top"/>
-        <TextBlock x:Name="sedziowie" HorizontalAlignment="Left" Margin="429,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Margin="10">
+            <TextBlock Text="Aktualny mecz:" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock x:Name="druzyna1" Text=""/>
+                <TextBlock Text=" vs " />
+                <TextBlock x:Name="druzyna2" Text=""/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <TextBlock x:Name="wynik1" Text="0"/>
+                <TextBlock Text=" : " />
+                <TextBlock x:Name="wynik2" Text="0"/>
+            </StackPanel>
+            <TextBlock x:Name="sedziowie" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text=""/>
+            <Button x:Name="symulujMeczBtn" Content="Symuluj mecz" Click="LosujWynikiMeczuClick"/>
+            <Button x:Name="kolejnyMeczBtn" Content="Rozpocznij kolejny mecz" Click="RozegrajNastepnyMeczClick"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10">
+            <Button x:Name="symulujTabeleBtn" Content="Symuluj tabelę" Click="SymulujTabeleClick"/>
+            <Button x:Name="przejdzFinalyBtn" Content="Przejdź do turnieju finałowego" Click="TurniejFinalowyClick" IsEnabled="False"/>
+        </StackPanel>
     </Grid>
 </Window>

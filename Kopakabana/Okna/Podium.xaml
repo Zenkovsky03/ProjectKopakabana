@@ -6,48 +6,57 @@
         xmlns:local="clr-namespace:Kopakabana"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="Podium" Height="450" Width="800">
+        Title="Podium" Height="600" Width="1000">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Rectangle">
+            <Setter Property="Stroke" Value="Black"/>
+            <Setter Property="Fill" Value="LightGray"/>
+            <Setter Property="StrokeThickness" Value="2"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <TextBlock HorizontalAlignment="Center" Margin="0,49,0,0" TextWrapping="Wrap" Text="PODIUM" VerticalAlignment="Top"/>
-        <Rectangle HorizontalAlignment="Left" Height="57" Margin="170,245,0,0" Stroke="Black" VerticalAlignment="Top" Width="157" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.071"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="92" Margin="327,210,0,0" Stroke="Black" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.071"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="35" Margin="481,266,0,0" Stroke="Black" VerticalAlignment="Top" Width="186" RenderTransformOrigin="0.5,0.5">
-            <Rectangle.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.071"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-        <TextBlock HorizontalAlignment="Center" Margin="0,252,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" RenderTransformOrigin="0.166,-0.049"/>
-        <TextBlock HorizontalAlignment="Left" Margin="243,269,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" RenderTransformOrigin="0.166,-0.049"/>
-        <TextBlock HorizontalAlignment="Left" Margin="566,277,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" RenderTransformOrigin="0.166,-0.049"/>
-        <Button Content="Rozpocznij nowy turniej" HorizontalAlignment="Left" Margin="643,380,0,0" VerticalAlignment="Top" Click="NowyTurniejClick"/>
-        <Button Content="Zapisz dane do pliku" HorizontalAlignment="Left" Margin="479,380,0,0" VerticalAlignment="Top" Click="ZapiszDaneDoPlikuClick"/>
-        <TextBlock x:Name="druzynaDruga" HorizontalAlignment="Left" Margin="176,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="140"/>
-        <TextBlock x:Name="druzynaPierwsza" HorizontalAlignment="Center" Margin="0,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="140"/>
-        <TextBlock x:Name="druzynaTrzecia" HorizontalAlignment="Left" Margin="499,239,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="140"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,20,0,0" TextWrapping="Wrap" Text="PODIUM" VerticalAlignment="Top" FontSize="36" FontWeight="Bold"/>
 
+        <!-- Podium -->
+        <Rectangle HorizontalAlignment="Center" Height="150" Margin="0,150,0,0" Width="200" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Left" Height="100" Margin="250,200,0,0" Width="150" VerticalAlignment="Top"/>
+        <Rectangle HorizontalAlignment="Right" Height="50" Margin="0,250,250,0" Width="150" VerticalAlignment="Top"/>
 
+        <!-- Miejsca -->
+        <TextBlock HorizontalAlignment="Center" Margin="0,210,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="312,236,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" FontSize="24" RenderTransformOrigin="3.841,2.559"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,259,318,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" FontSize="24"/>
+
+        <!-- Nazwy drużyn -->
+        <TextBlock x:Name="druzynaPierwsza" HorizontalAlignment="Center" Margin="0,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.51,0.034"/>
+        <TextBlock x:Name="druzynaDruga" HorizontalAlignment="Left" Margin="250,173,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="druzynaTrzecia" HorizontalAlignment="Right" Margin="0,218,250,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+
+        <!-- Przyciski -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,419,0,0">
+            <Button Content="Rozpocznij nowy turniej" Click="NowyTurniejClick"/>
+            <Button Content="Zapisz dane do pliku" Click="ZapiszDaneDoPlikuClick"/>
+        </StackPanel>
     </Grid>
 </Window>

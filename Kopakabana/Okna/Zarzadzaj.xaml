@@ -6,22 +6,73 @@
         xmlns:local="clr-namespace:Kopakabana"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Zarzadzaj" Height="450" Width="800">
-    <Grid>
-        <Button Content="Cofnij" HorizontalAlignment="Left" Height="43" Margin="89,340,0,0" VerticalAlignment="Top" Width="124" Click="CofnijClick"/>
-        <Button Content="Wgraj dane z pliku" HorizontalAlignment="Center" Height="43" Margin="0,340,0,0" VerticalAlignment="Top" Width="124" Click="WgrajDaneClick"/>
-        <Button Content="Zapisz dane do pliku" HorizontalAlignment="Center" Height="43" Margin="0,286,0,0" VerticalAlignment="Top" Width="124" Click="ZapiszDaneClick"/>
-        <Button x:Name="rozpocznij" Content="Rozpocznij turniej" HorizontalAlignment="Left" Height="43" Margin="580,340,0,0" VerticalAlignment="Top" Width="124" Click="RozpocznijTurniejClick" IsEnabled="False"/>
-        <TextBlock HorizontalAlignment="Left" Margin="35,21,0,0" TextWrapping="Wrap" Text="Lista drużyn: " VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="567,24,0,0" TextWrapping="Wrap" Text="Lista sędziów: " VerticalAlignment="Top"/>
-        <Button x:Name="dodajDruzyne" Content="Dodaj drużynę" HorizontalAlignment="Left" Margin="132,19,0,0" VerticalAlignment="Top" Click="DodajDruzyneClick" IsEnabled="True"/>
-        <Button x:Name="dodajSedziego" Content="Dodaj sędziego" HorizontalAlignment="Left" Margin="671,20,0,0" VerticalAlignment="Top" Click="DodajSedziegoClick" IsEnabled="True"/>
+        Title="Zarzadzaj" Height="600" Width="1000">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
 
-        <ListBox x:Name="listaSedziow" Margin="433,69,11,148" BorderThickness="0">
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="DarkGreen"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style TargetType="ListBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Lista drużyn:" VerticalAlignment="Center" Margin="10"/>
+        <TextBlock Grid.Column="2" Grid.Row="0" Text="Lista sędziów:" VerticalAlignment="Center" Margin="10"/>
+
+        <ListBox x:Name="ListaDruzyn" Grid.Column="0" Grid.Row="1" Margin="10" BorderThickness="1" Height="400">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Imie}" VerticalAlignment="Center" Width="200"/>
+                        <TextBlock Text="{Binding Nazwa}" VerticalAlignment="Center" Width="100"/>
+                        <Button x:Name="edycjaPrzycisk" Content="Edytuj" Click="EdytujDruzyneClick" Tag="{Binding Nazwa}" Margin="5,0"/>
+                        <Button Content="Usuń" Click="UsunDruzyneClick" Tag="{Binding Nazwa}" Margin="5,0"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox x:Name="listaSedziow" Grid.Column="2" Grid.Row="1" Margin="10" BorderThickness="1" Height="400">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Imie}" VerticalAlignment="Center" Width="100"/>
                         <Button Content="Edytuj" Click="EdytujSedziegoClick" Tag="{Binding Imie}" Margin="5,0"/>
                         <Button Content="Usuń" Click="UsunSedziegoClick" Tag="{Binding Imie}" Margin="5,0"/>
                     </StackPanel>
@@ -29,16 +80,23 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <ListBox x:Name="ListaDruzyn" Margin="22,69,428,148" BorderThickness="0">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Nazwa}" VerticalAlignment="Center" Width="200"/>
-                        <Button x:Name="edycjaPrzycisk" Content="Edytuj" Click="EdytujDruzyneClick" Tag="{Binding Nazwa}" Margin="5,0"/>
-                        <Button Content="Usuń" Click="UsunDruzyneClick" Tag="{Binding Nazwa}" Margin="5,0"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
+            <Button x:Name="dodajDruzyne" Content="Dodaj drużynę" Click="DodajDruzyneClick" Width="150"/>
+            <Button x:Name="dodajSedziego" Content="Dodaj sędziego" Click="DodajSedziegoClick" Width="150"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="Cofnij" Click="CofnijClick" Width="150" Margin="5"/>
+            <Button Grid.Column="1" Content="Wgraj dane z pliku" Click="WgrajDaneClick" Width="150" Margin="5"/>
+            <Button Grid.Column="2" Content="Zapisz dane do pliku" Click="ZapiszDaneClick" Width="160" Margin="5"/>
+            <Button Grid.Column="3" x:Name="rozpocznij" Content="Rozpocznij turniej" Click="RozpocznijTurniejClick" Width="150" Margin="5" IsEnabled="False"/>
+        </Grid>
     </Grid>
 </Window>

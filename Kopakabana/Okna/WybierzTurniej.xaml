@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:Kopakabana"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="WybierzTurniej" Height="450" Width="800">
+        Title="WybierzTurniej" Height="600" Width="1000">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -19,10 +32,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="1" Content="Siatkowka" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="50" Click="WybierzSiatkowkePlazowaClick" />
-        <Button Grid.Column="1" Grid.Row="1"  Content="Przeciaganie liny" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Height="50" Click="WybierzPrzeciaganieLinyClick" />
-        <Button Grid.Column="2" Grid.Row="1" Content="Dwa ognie" HorizontalAlignment="Center" VerticalAlignment="Top"  Width="250" Height="50" Click="WybierzDwaOgnieClick" />
+        <Button Grid.Column="0" Grid.Row="1" Content="Siatkówka plażowa" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="50" Click="WybierzSiatkowkePlazowaClick" />
+        <Button Grid.Column="1" Grid.Row="1" Content="Przeciąganie liny" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="50" Click="WybierzPrzeciaganieLinyClick" />
+        <Button Grid.Column="2" Grid.Row="1" Content="Dwa ognie" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="50" Click="WybierzDwaOgnieClick" />
         <Button Grid.Column="1" Grid.Row="2" Content="Cofnij" HorizontalAlignment="Center" Width="250" Height="50" Click="CofnijClick"/>
     </Grid>
-
 </Window>

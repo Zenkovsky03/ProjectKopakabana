@@ -103,11 +103,11 @@ namespace Kopakabana
                     indeksySedziowAsystentow.Add(random.Next(sedziowieAsystenci.Count));
                 }
 
-                sedzia = $"Sedziowie: {sedziaGlowny} (glowny), {sedziowieAsystenci[indeksySedziowAsystentow.ElementAt(0)].Imie}, {sedziowieAsystenci[indeksySedziowAsystentow.ElementAt(1)].Imie}";
+                sedzia = $"Sędziowie: {sedziaGlowny} (główny), {sedziowieAsystenci[indeksySedziowAsystentow.ElementAt(0)].Imie}, {sedziowieAsystenci[indeksySedziowAsystentow.ElementAt(1)].Imie}";
             }
             else
             {
-                sedzia = $"Sedzia: {this.Turniej.Sedziowie[random.Next(this.Turniej.Sedziowie.Count)].Imie}";
+                sedzia = $"Sędzia: {this.Turniej.Sedziowie[random.Next(this.Turniej.Sedziowie.Count)].Imie}";
             }
 
             return sedzia;
