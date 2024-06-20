@@ -52,30 +52,37 @@ namespace Kopakabana
 
         private void ZapiszDaneDoPlikuClick(object sender, RoutedEventArgs e)
         {
-            var dialog = new Microsoft.Win32.OpenFolderDialog();
-            bool? rezultat = dialog.ShowDialog();
-
-            if (rezultat == true)
+            try
             {
-                string wybranaSciezka = dialog.FolderName;
-                var dane = new
+                var dialog = new Microsoft.Win32.OpenFolderDialog();
+                bool? rezultat = dialog.ShowDialog();
+
+                if (rezultat == true)
                 {
-                    this.pierwsza,
-                    this.druga,
-                    this.trzecia
-                };
+                    string wybranaSciezka = dialog.FolderName;
+                    var dane = new
+                    {
+                        this.pierwsza,
+                        this.druga,
+                        this.trzecia
+                    };
 
-                var options = new JsonSerializerOptions
-                {
-                    WriteIndented = true
-                };
+                    var options = new JsonSerializerOptions
+                    {
+                        WriteIndented = true
+                    };
 
-                DateTime dateTime = DateTime.Now;
-                string aktualnyTimestamp = dateTime.ToString("yyyy-MM-dd--HH-mm");
-                string json = JsonSerializer.Serialize(dane, options);
-                string pelnaSciezka = $"{wybranaSciezka}/Turniej-{this.Turniej.Dyscyplina.Nazwa}-{aktualnyTimestamp}-Podium.json";
+                    DateTime dateTime = DateTime.Now;
+                    string aktualnyTimestamp = dateTime.ToString("yyyy-MM-dd--HH-mm");
+                    string json = JsonSerializer.Serialize(dane, options);
+                    string pelnaSciezka = $"{wybranaSciezka}/Turniej-{this.Turniej.Dyscyplina.Nazwa}-{aktualnyTimestamp}-Podium.json";
 
-                File.WriteAllText(pelnaSciezka, json);
+                    File.WriteAllText(pelnaSciezka, json);
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
     }

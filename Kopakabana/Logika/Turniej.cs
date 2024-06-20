@@ -53,37 +53,50 @@ namespace Kopakabana
 
         public void ZapiszStan(string sciezka)
         {
-            var turniej = new
+            try
             {
-                this.Druzyny,
-                this.Sedziowie
-            };
+                var turniej = new
+                {
+                    this.Druzyny,
+                    this.Sedziowie
+                };
 
-            var options = new JsonSerializerOptions
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                };
+
+                DateTime dateTime = DateTime.Now;
+                string aktualnyTimestamp = dateTime.ToString("yyyy-MM-dd--HH-mm");
+                string json = JsonSerializer.Serialize(turniej, options);
+                string pelnaSciezka = $"{sciezka}/Turniej-{this.Dyscyplina.Nazwa}-{aktualnyTimestamp}.json";
+
+                File.WriteAllText(pelnaSciezka, json);
+            }
+            catch (Exception ex)
             {
-                WriteIndented = true
-            };
 
-            DateTime dateTime = DateTime.Now;
-            string aktualnyTimestamp = dateTime.ToString("yyyy-MM-dd--HH-mm");
-            string json = JsonSerializer.Serialize(turniej, options);
-            string pelnaSciezka = $"{sciezka}/Turniej-{this.Dyscyplina.Nazwa}-{aktualnyTimestamp}.json";
-
-            File.WriteAllText(pelnaSciezka, json);
+            }
         }
 
         public void OdczytajStan(string plik)
         {
-            string json = File.ReadAllText(plik);
-
-            var turniej = JsonSerializer.Deserialize<Turniej>(json);
-
-            if (turniej != null)
+            try
             {
-                this.Druzyny = turniej.Druzyny;
-                this.Sedziowie = turniej.Sedziowie;
-            }
+                string json = File.ReadAllText(plik);
 
+                var turniej = JsonSerializer.Deserialize<Turniej>(json);
+
+                if (turniej != null)
+                {
+                    this.Druzyny = turniej.Druzyny;
+                    this.Sedziowie = turniej.Sedziowie;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public void wybierzDyscyplina(AbstractDyscyplina Dyscyplina)
