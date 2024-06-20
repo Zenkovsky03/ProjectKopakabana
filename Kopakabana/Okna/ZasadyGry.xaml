@@ -6,21 +6,48 @@
         xmlns:local="clr-namespace:Kopakabana"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Zasady Gry" Height="450" Width="800">
+        Title="Zasady Gry" Height="500" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0*" />
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <Button Content="Cofnij" Width="200" Height="50" Click="CofnijClick" Margin="275,374,275,10"/>
+        <TextBlock
+                   TextWrapping="Wrap" Padding="0,0,0,0" Margin="0,51,0,0"
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   TextAlignment="Justify" Height="343" Width="744">
+            <Run Text="Kopakabana to aplikacja do zarządzania turniejem sportowym, w którym możesz organizować zawody w piłce plażowej, przeciąganiu liny oraz dwa ognie."/>
+            <LineBreak/>
+            <LineBreak/>
 
-
-        <Button  Grid.Row="2" Content="Cofnij" Width="250" Height="50" Click="CofnijClick" Grid.ColumnSpan="2" Margin="275,29,275,29"/>
-        <Label  Grid.Row="1" Content="Tutaj beda jakis tam opisane co jak sie gra lorem lorem lorem" Padding="50,0,0,0" Grid.ColumnSpan="2" Margin="0,0,0,108" Grid.RowSpan="2" />
+            <Run Text="Wybór dyscypliny: " FontWeight="Bold"/>
+            <Run Text="Na początku wybierasz dyscyplinę, w której chcesz zorganizować turniej (piłka plażowa, przeciąganie liny, dwa ognie)."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="Dodawanie drużyn i zawodników: " FontWeight="Bold"/>
+            <Run Text="Następnie dodajesz 6 drużyn, z których każda składa się z 4-5 zawodników."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="Dodawanie sędziów: " FontWeight="Bold"/>
+            <Run Text="Dodajesz również 6 sędziów, którzy będą nadzorować mecze."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="Zarządzanie stanem turnieju: " FontWeight="Bold"/>
+            <Run Text="Możesz zapisać stan turnieju do pliku lub wczytać go z pliku, aby kontynuować rozgrywki później."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="Rozgrywki: " FontWeight="Bold"/>
+            <Run Text="Po dodaniu drużyn i sędziów przechodzisz do rozgrywek, gdzie masz tabelę ze wszystkimi drużynami. Każda drużyna gra z każdą inną drużyną."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="Symulacja meczów: " FontWeight="Bold"/>
+            <Run Text="Możesz symulować mecze pojedynczo lub przeprowadzić symulację całego turnieju."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="Finały: " FontWeight="Bold"/>
+            <Run Text="Do półfinałów przechodzą 4 najlepsze drużyny. Z półfinalistów wyłaniane jest podium turnieju."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="Zapisywanie wyników: " FontWeight="Bold"/>
+            <Run Text="Wyniki podium możesz zapisać do pliku, aby mieć dokumentację wyników turnieju."/>
+        </TextBlock>
 
 
     </Grid>
