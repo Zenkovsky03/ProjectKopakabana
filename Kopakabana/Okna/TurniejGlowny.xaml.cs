@@ -21,6 +21,7 @@ namespace Kopakabana
             this.Turniej.WygenerujGry();
             ZaladujDane();
             RozpocznijMecz(this.numerMeczu);
+            nazwaTurnieju.Text = "Turniej: " + this.Turniej.Dyscyplina.Nazwa;
         }
 
         private void ZaladujDane()
@@ -58,7 +59,35 @@ namespace Kopakabana
             {
                 kolejnyMeczBtn.IsEnabled = false;
             }
-    
+
+            sedziowie.Text = LosujSedziego();
+        }
+
+        private string LosujSedziego()
+        {
+            Random random = new Random();
+            string sedzia = "";
+
+            var sedziowieGlowni = this.Turniej.Sedziowie.Where(s => s.CzyGlowny).ToList();
+            var sedziowieAsystenci = this.Turniej.Sedziowie.Where(s => !s.CzyGlowny).ToList();
+
+            if (this.Turniej.Dyscyplina is SiatkowkaPlazowa)
+            {
+                string sedziaGlowny = sedziowieGlowni[random.Next(sedziowieGlowni.Count)].Imie;
+
+                HashSet<int> indeksySedziowAsystentow = new HashSet<int>();
+                while (indeksySedziowAsystentow.Count < 2)
+                {
+                    indeksySedziowAsystentow.Add(random.Next(sedziowieAsystenci.Count));
+                }
+
+                sedzia = $"Sedziowie: {sedziaGlowny} (glowny), {sedziowieAsystenci[indeksySedziowAsystentow.ElementAt(0)].Imie}, {sedziowieAsystenci[indeksySedziowAsystentow.ElementAt(1)].Imie}";
+            } else
+            {
+                sedzia = $"Sedzia: {this.Turniej.Sedziowie[random.Next(this.Turniej.Sedziowie.Count)].Imie}";
+            }
+
+            return sedzia;
         }
 
         private void LosujWynik(int numerMeczu)
@@ -112,7 +141,7 @@ namespace Kopakabana
             RozpocznijMecz(this.numerMeczu);
         }
 
-        private  void SymulujTabeleClick(object sender, RoutedEventArgs e)
+        private async void SymulujTabeleClick(object sender, RoutedEventArgs e)
         {
             symulujTabeleBtn.IsEnabled = false;
 
@@ -121,7 +150,7 @@ namespace Kopakabana
                 RozpocznijMecz(i);
                 LosujWynik(i);
 
-                //await Task.Delay(500);
+                await Task.Delay(500);
             }
 
             przejdzFinalyBtn.IsEnabled = true;

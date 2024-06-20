@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="TurniejFinalowy" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.567,0.517" Margin="0,0,0,4">
-        <TextBlock HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" Text="Turniej finalowy: siatkowka" VerticalAlignment="Top"/>
+        <TextBlock x:Name="nazwaTurnieju" HorizontalAlignment="Center" Margin="0,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <Line X1="20" Y1="80" X2="150" Y2="80" Stroke="Black" StrokeThickness="2"/>
         <Line X1="20" Y1="160" X2="150" Y2="160" Stroke="Black" StrokeThickness="2"/>
         <Line X1="20" Y1="240" X2="150" Y2="240" Stroke="Black" StrokeThickness="2"/>
@@ -26,16 +26,16 @@
         <TextBlock x:Name="final1" HorizontalAlignment="Left" Margin="159,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122"/>
         <TextBlock x:Name="final2" HorizontalAlignment="Left" Margin="159,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
         <TextBlock x:Name="zwyciezca" HorizontalAlignment="Left" Margin="288,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122"/>
-        <Button x:Name="symulujMeczBtn" Content="Symuluj mecz" HorizontalAlignment="Left" Margin="521,166,0,0" VerticalAlignment="Top" Click="LosujWynikiMeczuClick"/>
-        <Button x:Name="symulujDrabinkeBtn" Content="Symuluj turniej" HorizontalAlignment="Left" Margin="523,215,0,0" VerticalAlignment="Top" Click="SymulujDrabinkeClick"/>
-        <Button x:Name="pokazPodiumBtn" Content="Pokaż podium" HorizontalAlignment="Left" Margin="641,215,0,0" VerticalAlignment="Top" IsEnabled="false" Click="PodiumClick"/>
+        <Button x:Name="symulujMeczBtn" Content="Symuluj mecz" HorizontalAlignment="Left" Margin="523,203,0,0" VerticalAlignment="Top" Click="LosujWynikiMeczuClick"/>
+        <Button x:Name="symulujDrabinkeBtn" Content="Symuluj turniej" HorizontalAlignment="Left" Margin="523,241,0,0" VerticalAlignment="Top" Click="SymulujDrabinkeClick"/>
+        <Button x:Name="pokazPodiumBtn" Content="Pokaż podium" HorizontalAlignment="Left" Margin="641,241,0,0" VerticalAlignment="Top" IsEnabled="false" Click="PodiumClick"/>
         <TextBlock x:Name="druzyna1" HorizontalAlignment="Left" Margin="439,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="539,100,0,0" TextWrapping="Wrap" Text="vs" VerticalAlignment="Top"/>
         <TextBlock x:Name="druzyna2" HorizontalAlignment="Left" Margin="603,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
         <TextBlock x:Name="wynik1" HorizontalAlignment="Left" Margin="521,128,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
         <TextBlock x:Name="wynik2" HorizontalAlignment="Left" Margin="561,128,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="542,128,0,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top"/>
-        <Button x:Name="kolejnyMeczBtn" Content="Rozpocznij kolejny mecz" HorizontalAlignment="Left" Margin="641,166,0,0" VerticalAlignment="Top" Click="RozegrajNastepnyMeczClick"/>
+        <Button x:Name="kolejnyMeczBtn" Content="Rozpocznij kolejny mecz" HorizontalAlignment="Left" Margin="641,0,0,0" VerticalAlignment="Center" Click="RozegrajNastepnyMeczClick"/>
         <Line X1="20" Y1="260" X2="150" Y2="260" Stroke="Black" StrokeThickness="2" Margin="250,67,-250,-67"/>
         <Line X1="20" Y1="340" X2="150" Y2="340" Stroke="Black" StrokeThickness="2" Margin="250,67,-250,-67"/>
         <Line X1="150" Y1="260" X2="150" Y2="340" Stroke="Black" StrokeThickness="2" Margin="250,67,-250,-67"/>
@@ -43,6 +43,7 @@
         <TextBlock x:Name="braz1" HorizontalAlignment="Left" Margin="272,307,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
         <TextBlock x:Name="braz2" HorizontalAlignment="Left" Margin="272,382,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
         <TextBlock x:Name="brazZwyciezca" HorizontalAlignment="Left" Margin="415,349,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="128"/>
+        <TextBlock x:Name="sedziowie" HorizontalAlignment="Left" Margin="467,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

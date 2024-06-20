@@ -41,6 +41,8 @@ namespace Kopakabana
             this.iloscMeczyRozegranych = this.Turniej.Gry.Count;
             PosortujDruzyny();
             InicjujDrabinke();
+            nazwaTurnieju.Text = "Turniej finalowy: " + this.Turniej.Dyscyplina.Nazwa;
+
         }
 
         private void PosortujDruzyny()
@@ -80,6 +82,35 @@ namespace Kopakabana
                 kolejnyMeczBtn.IsEnabled = false;
             }
 
+            sedziowie.Text = LosujSedziego();
+        }
+
+        private string LosujSedziego()
+        {
+            Random random = new Random();
+            string sedzia = "";
+
+            var sedziowieGlowni = this.Turniej.Sedziowie.Where(s => s.CzyGlowny).ToList();
+            var sedziowieAsystenci = this.Turniej.Sedziowie.Where(s => !s.CzyGlowny).ToList();
+
+            if (this.Turniej.Dyscyplina is SiatkowkaPlazowa)
+            {
+                string sedziaGlowny = sedziowieGlowni[random.Next(sedziowieGlowni.Count)].Imie;
+
+                HashSet<int> indeksySedziowAsystentow = new HashSet<int>();
+                while (indeksySedziowAsystentow.Count < 2)
+                {
+                    indeksySedziowAsystentow.Add(random.Next(sedziowieAsystenci.Count));
+                }
+
+                sedzia = $"Sedziowie: {sedziaGlowny} (glowny), {sedziowieAsystenci[indeksySedziowAsystentow.ElementAt(0)].Imie}, {sedziowieAsystenci[indeksySedziowAsystentow.ElementAt(1)].Imie}";
+            }
+            else
+            {
+                sedzia = $"Sedzia: {this.Turniej.Sedziowie[random.Next(this.Turniej.Sedziowie.Count)].Imie}";
+            }
+
+            return sedzia;
         }
 
         private void LosujWynik(int numerMeczu)

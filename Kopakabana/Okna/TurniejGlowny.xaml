@@ -17,7 +17,7 @@
                 <DataGridTextColumn Header="Punkty" Binding="{Binding Punkty}" SortMemberPath="Punkty"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Margin="367,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pl-pl" Text="Turniej: Siatkówka"/></TextBlock>
+        <TextBlock x:Name="nazwaTurnieju" HorizontalAlignment="Left" Margin="367,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="pl-pl" Text=""/></TextBlock>
         <Button x:Name="symulujMeczBtn" Content="Symuluj mecz" HorizontalAlignment="Left" Margin="548,188,0,0" VerticalAlignment="Top" Click="LosujWynikiMeczuClick" />
         <Button x:Name="kolejnyMeczBtn" Content="Rozpocznij kolejny mecz" HorizontalAlignment="Left" Margin="647,188,0,0" VerticalAlignment="Top" Click="RozegrajNastepnyMeczClick"/>
         <Button x:Name="symulujTabeleBtn" Content="Symuluj tabelę" HorizontalAlignment="Left" Margin="468,382,0,0" VerticalAlignment="Top" Click="SymulujTabeleClick"/>
@@ -29,6 +29,6 @@
         <TextBlock x:Name="wynik1" HorizontalAlignment="Left" Margin="521,128,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
         <TextBlock x:Name="wynik2" HorizontalAlignment="Left" Margin="561,128,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="542,128,0,0" TextWrapping="Wrap" Text=":" VerticalAlignment="Top"/>
-
+        <TextBlock x:Name="sedziowie" HorizontalAlignment="Left" Margin="429,155,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
     </Grid>
 </Window>
